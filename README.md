@@ -22,17 +22,19 @@
 ## 📋 Backlog do Produto <a id="backlog"></a>
 | Sprint | US | Tarefa | Prioridade | Status | Entrega |
 | ------ | -- | ------ | ---------- | ------ | ------- |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
-|  |  |  |  | 🛑 |  |
+|  |  |Elaboração do Backlog  | 100 | 🛑 |  |
+|  |  |Projeção do protótipo no Figma  | 95 | 🛑 |  |
+|  |  |Criação do Github do projeto  | 90 | 🛑 |  |
+|  |  |Importação e acesso ao Banco de Dados  | 85 | 🛑 |  |
+|  |  |Aprimoramento da Interface do Usuário  | 80 | 🛑 |  |
+|  |  |Desenvolver funcionalidade para troca entre diferentes bancos de dados.  | 75 | 🛑 |  |
+|  |  |Criar cenários de teste para verificar integração com diferentes bancos de dados.  |70  | 🛑 |  |
+|  |  |Preparar documentação para instalação e uso do chatbot.  | 60 | 🛑 |  |
+|  |  |Implementar lógica para acessar e buscar dados no banco de dados.  | 50 | 🛑 |  |
+|  |  |Realizar testes de desempenho para medir impacto das otimizações.  | 40 | 🛑 |  |
+|  |  |Executar testes de unidade e corrigir falhas.  | 30 | 🛑 |  |
+|  |  |Criar cenários de teste para verificar integração com diferentes bancos de dados.  | 20 | 🛑 |  |
+|  |  |Realizar revisão final do código e funcionalidades.  | 10 | 🛑 |  |
 
   ### 1° Sprint
 
