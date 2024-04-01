@@ -10,8 +10,12 @@
    </p>
 
 ## 🎯 Objetivo <a id="objetivo"></a>
+O objetivo principal do nosso projeto é criar um chatbot robusto e eficiente utilizando Java e integrando-o com um banco de dados para fornecer respostas contextualmente relevantes aos usuários. Como estudantes de Análise e Desenvolvimento de Sistemas, nosso objetivo é aplicar os conhecimentos teóricos adquiridos em sala de aula em um projeto prático e significativo.
 
 ## ⚙ Desafio <a id="desafio"></a>
+O desafio principal que enfrentaremos ao desenvolver nosso chatbot é garantir uma compreensão precisa e abrangente das perguntas dos usuários e fornecer respostas relevantes e úteis em tempo real. Isso envolve lidar com uma ampla variedade de consultas e contextos, desde questões simples até solicitações mais complexas.
+Como estudantes do segundo semestre, enfrentaremos desafios técnicos e conceituais ao implementar o chatbot. Precisaremos dominar as tecnologias específicas, como Java, LLM e as ferramentas de banco de dados, e entender como integrá-las de forma eficiente para alcançar nossos objetivos.
+Além disso, outro desafio importante será garantir a qualidade e a robustez do nosso código, seguindo boas práticas de desenvolvimento de software e garantindo a escalabilidade e a manutenibilidade do projeto.
 
 ## 🥇 MVP <a id="mvp"></a>
 
