@@ -26,9 +26,6 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 ## 📋 Backlog do Produto <a id="backlog"></a>
 | Sprint | US | Tarefa | Prioridade | Status | Entrega |
 | ------ | -- | ------ | ---------- | ------ | ------- |
-|  |  |Elaboração do Backlog  | 100 | 🛑 |  |
-|  |  |Projeção do protótipo no Figma  | 95 | 🛑 |  |
-|  |  |Criação do Github do projeto  | 90 | 🛑 |  |
 |  |  |Importação e acesso ao Banco de Dados  | 85 | 🛑 |  |
 |  |  |Aprimoramento da Interface do Usuário  | 80 | 🛑 |  |
 |  |  |Desenvolver funcionalidade para troca entre diferentes bancos de dados.  | 75 | 🛑 |  |
@@ -38,7 +35,8 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 |  |  |Realizar testes de desempenho para medir impacto das otimizações.  | 40 | 🛑 |  |
 |  |  |Executar testes de unidade e corrigir falhas.  | 30 | 🛑 |  |
 |  |  |Criar cenários de teste para verificar integração com diferentes bancos de dados.  | 20 | 🛑 |  |
-|  |  |Realizar revisão final do código e funcionalidades.  | 10 | 🛑 |  |
+|  |  |Realizar revisão final do código e funcionalidades.  | 15 | 🛑 |  |
+|  |  |Implementar função par troca de Banco de Dados  | 10 | 🛑 |  |
 
   ### 1° Sprint
 
