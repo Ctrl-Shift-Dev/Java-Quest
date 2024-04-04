@@ -26,17 +26,16 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 ## 📋 Backlog do Produto <a id="backlog"></a>
 | Sprint | US | Tarefa | Prioridade | Status | Entrega |
 | ------ | -- | ------ | ---------- | ------ | ------- |
-|  |  |Importação e acesso ao Banco de Dados  | 85 | 🛑 |  |
-|  |  |Aprimoramento da Interface do Usuário  | 80 | 🛑 |  |
-|  |  |Desenvolver funcionalidade para troca entre diferentes bancos de dados.  | 75 | 🛑 |  |
+|  | "Como um cliente, gostaria de importar dados externos para o banco de dados da aplicação." |Importação e acesso ao Banco de Dados  | 85 | 🛑 |  |
+|  | "Como um cliente, gostaria de uma interface do usuário intuitiva e amigável, para facilitar a navegação, interação e compreensão das funcionalidades." |Aprimoramento da Interface do Usuário  | 80 | 🛑 |  |
+|  | "Como um cliente, gostaria de ter a capacidade de trocar entre diferentes bancos de dados de forma transparente, para permitir flexibilidade na escolha do sistema." |Desenvolver funcionalidade para troca entre diferentes bancos de dados.  | 75 | 🛑 |  |
 |  |  |Criar cenários de teste para verificar integração com diferentes bancos de dados.  |70  | 🛑 |  |
-|  |  |Preparar documentação para instalação e uso do chatbot.  | 60 | 🛑 |  |
+|  | "Como um cliente, gostaria de elaborar cenários de teste para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar." |Preparar documentação para instalação e uso do chatbot.  | 60 | 🛑 |  |
 |  |  |Implementar lógica para acessar e buscar dados no banco de dados.  | 50 | 🛑 |  |
 |  |  |Realizar testes de desempenho para medir impacto das otimizações.  | 40 | 🛑 |  |
 |  |  |Executar testes de unidade e corrigir falhas.  | 30 | 🛑 |  |
 |  |  |Criar cenários de teste para verificar integração com diferentes bancos de dados.  | 20 | 🛑 |  |
 |  |  |Realizar revisão final do código e funcionalidades.  | 15 | 🛑 |  |
-|  |  |Implementar função par troca de Banco de Dados  | 10 | 🛑 |  |
 
   ### 1° Sprint
 
