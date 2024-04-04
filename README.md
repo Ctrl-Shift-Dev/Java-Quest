@@ -26,16 +26,16 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 ## 📋 Backlog do Produto <a id="backlog"></a>
 | Sprint | US | Tarefa | Prioridade | Status | Entrega |
 | ------ | -- | ------ | ---------- | ------ | ------- |
-|  | "Como um cliente, gostaria de importar dados externos para o banco de dados da aplicação." |Importação e acesso ao Banco de Dados  | 85 | 🛑 |  |
-|  | "Como um cliente, gostaria de uma interface do usuário intuitiva e amigável, para facilitar a navegação, interação e compreensão das funcionalidades." |Aprimoramento da Interface do Usuário  | 80 | 🛑 |  |
-|  | "Como um cliente, gostaria de ter a capacidade de trocar entre diferentes bancos de dados de forma transparente, para permitir flexibilidade na escolha do sistema." |Desenvolver funcionalidade para troca entre diferentes bancos de dados.  | 75 | 🛑 |  |
-|  |  |Criar cenários de teste para verificar integração com diferentes bancos de dados.  |70  | 🛑 |  |
-|  | "Como um cliente, gostaria de elaborar cenários de teste para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar." |Preparar documentação para instalação e uso do chatbot.  | 60 | 🛑 |  |
-|  |  |Implementar lógica para acessar e buscar dados no banco de dados.  | 50 | 🛑 |  |
-|  |  |Realizar testes de desempenho para medir impacto das otimizações.  | 40 | 🛑 |  |
-|  |  |Executar testes de unidade e corrigir falhas.  | 30 | 🛑 |  |
-|  |  |Criar cenários de teste para verificar integração com diferentes bancos de dados.  | 20 | 🛑 |  |
-|  |  |Realizar revisão final do código e funcionalidades.  | 15 | 🛑 |  |
+|  | "Como um administrador do sistema, gostaria de importar dados externos para o banco de dados da aplicação." |Importação e acesso ao Banco de Dados  | 85 | 🛑 |  |
+|  | "Como um usuário da aplicação, gostaria de uma interface do usuário intuitiva e amigável, para facilitar a navegação, interação e compreensão das funcionalidades." |Aprimoramento da Interface do Usuário  | 80 | 🛑 |  |
+|  | "Como um administrador do sistema ou usuário avançado, gostaria de ter a capacidade de trocar entre diferentes bancos de dados de forma transparente, para permitir flexibilidade na escolha do sistema." |Desenvolver funcionalidade para troca entre diferentes bancos de dados.  | 75 | 🛑 |  |
+|  | "Como membro da equipe de qualidade de software, gostaria de elaborar cenários de teste para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar." |Criar cenários de teste para verificar integração com diferentes bancos de dados.  |70  | 🛑 |  |
+|  | "Como administrador do sistema ou usuário interessado em integrar o chatbot à plataforma, Gostaria de ter uma documentação clara sobre como instalar e utilizar o chatbot, para facilitar o processo de configuração e maximizar a eficácia do chatbot na plataforma." |Preparar documentação para instalação e uso do chatbot.  | 60 | 🛑 |  |
+|  | "Como desenvolvedor da aplicação, gostaria de implementar uma lógica robusta para acessar e buscar dados no banco de dados, para garantir que a aplicação seja capaz de recuperar informações relevantes de forma eficiente e precisa." |Implementar lógica para acessar e buscar dados no banco de dados.  | 50 | 🛑 |  |
+|  | "Como membro da equipe de desenvolvimento, gostaria de realizar testes de desempenho para medir o impacto das otimizações implementadas na lógica de acesso aos dados, para garantir que as alterações realizadas resultem em melhorias significativas." |Realizar testes de desempenho para medir impacto das otimizações.  | 40 | 🛑 |  |
+|  | "Como desenvolvedor responsável pela qualidade do código, gostaria de executar testes de unidade abrangentes na lógica de acesso a dados, para identificar e corrigir quaisquer falhas ou bugs que possam comprometer a integridade e o funcionamento correto da aplicação." |Executar testes de unidade e corrigir falhas.  | 30 | 🛑 |  |
+|  | "Como membro da equipe de qualidade de software, gostaria de elaborar cenários de teste abrangentes para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar, importar e operar corretamente em ambientes que utilizam diversos sistemas de gerenciamento de banco de dados." |Criar cenários de teste para verificar integração com diferentes bancos de dados.  | 20 | 🛑 |  |
+|  | "Como membro da equipe de desenvolvimento, gostaria de realizar uma revisão final abrangente do código e das funcionalidades da aplicação, para garantir que o código esteja livre de erros, siga as melhores práticas de desenvolvimento e atenda aos requisitos do usuário." |Realizar revisão final do código e funcionalidades.  | 15 | 🛑 |  |
 
   ### 1° Sprint
 
