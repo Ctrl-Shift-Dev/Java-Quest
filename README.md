@@ -37,7 +37,7 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 | 3 | "Como desenvolvedor responsável pela qualidade do código, gostaria de executar testes de unidade abrangentes na lógica de acesso a dados, para identificar e corrigir quaisquer falhas ou bugs que possam comprometer a integridade e o funcionamento correto da aplicação." |Executar testes de unidade e corrigir falhas.  | 30 | 🛑 |  |
 | 3 | "Como membro da equipe de qualidade de software, gostaria de elaborar cenários de teste abrangentes para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar, importar e operar corretamente em ambientes que utilizam diversos sistemas de gerenciamento de banco de dados." |Criar cenários de teste para verificar integração com diferentes bancos de dados.  | 20 | 🛑 |  |
 | 4 | "Como membro da equipe de desenvolvimento, gostaria de realizar uma revisão final abrangente do código e das funcionalidades da aplicação, para garantir que o código esteja livre de erros, siga as melhores práticas de desenvolvimento e atenda aos requisitos do usuário." |Realizar revisão final do código e funcionalidades.  | 15 | 🛑 |  |
-| 4 | "Como um usuário da aplicação, gostaria de uma interface do usuário intuitiva e amigável, para facilitar a navegação, interação e compreensão das funcionalidades." |Aprimoramento da Interface do Usuário  | 80 | 🛑 |  |
+| 4 | "Como um usuário da aplicação, gostaria de uma interface do usuário intuitiva e amigável, para facilitar a navegação, interação e compreensão das funcionalidades." |Aprimoramento da Interface do Usuário  | 10 | 🛑 |  |
 
 
   ### 1° Sprint
