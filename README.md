@@ -49,13 +49,12 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
   ### 4° Sprint
 
 ## 🗂 Requisitos <a id="requisitos"></a>
-· Permitir ao usuário selecionar um banco de dados relacional.
-· Criação de uma tela para receber como entrada uma consulta escrita em linguagem natural.
-· Conversão da linguagem natural em código SQL
 <details>
    <summary>Funcionais:</summary>
    <ul>
-     
+· Permitir ao usuário selecionar um banco de dados relacional.
+· Criação de uma tela para receber como entrada uma consulta escrita em linguagem natural.
+· Conversão da linguagem natural em código SQL
    <ul>
 </details>
 <details>
