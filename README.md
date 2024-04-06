@@ -38,6 +38,7 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 | 3 | "Como membro da equipe de qualidade de software, gostaria de elaborar cenários de teste abrangentes para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar, importar e operar corretamente em ambientes que utilizam diversos sistemas de gerenciamento de banco de dados." |Criar cenários de teste para verificar integração com diferentes bancos de dados.  | 20 | 🛑 |  |
 | 4 | "Como membro da equipe de desenvolvimento, gostaria de realizar uma revisão final abrangente do código e das funcionalidades da aplicação, para garantir que o código esteja livre de erros, siga as melhores práticas de desenvolvimento e atenda aos requisitos do usuário." |Realizar revisão final do código e funcionalidades.  | 15 | 🛑 |  |
 | 4 | "Como um usuário da aplicação, gostaria de uma interface do usuário intuitiva e amigável, para facilitar a navegação, interação e compreensão das funcionalidades." |Aprimoramento da Interface do Usuário  | 10 | 🛑 |  |
+| 4 | "Como um desenvolvedor de sistemas de inteligência artificial (IA), desejo implementar uma função que permita a troca dinâmica entre diferentes IAs em tempo de execução. " | Implementar função para troca entre IAs | 10 | 🛑 |  |
 
 
   ### 1° Sprint
@@ -52,9 +53,9 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 <details>
    <summary>Funcionais:</summary>
    <ul>
-· Permitir ao usuário selecionar um banco de dados relacional.
-· Criação de uma tela para receber como entrada uma consulta escrita em linguagem natural.
-· Conversão da linguagem natural em código SQL
+        <li> Permitir ao usuário selecionar um banco de dados relacional. </li.>
+        <li> Criação de uma tela para receber como entrada uma consulta escrita em linguagem natural. </li.>
+        <li> Conversão da linguagem natural em código SQL. </li>
    <ul>
 </details>
 <details>
