@@ -41,14 +41,9 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 | 4 | "Como um usuário da aplicação, gostaria de uma interface do usuário intuitiva e amigável, para facilitar a navegação, interação e compreensão das funcionalidades." |Aprimoramento da Interface do Usuário  | 30 | 🛑 |  |
 
 
-
+  ### GIF de Apresentação
   ### 1° Sprint
 
-  ### 2° Sprint
-
-  ### 3° Sprint
-
-  ### 4° Sprint
 
 ## 🗂 Requisitos <a id="requisitos"></a>
 <details>
