@@ -24,7 +24,7 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 </p>     
 
 ## 📋 Backlog do Produto <a id="backlog"></a>
-| Sprint | US | Tarefa | Prioridade | Status | Entrega |
+| Sprint | User Stories (US)  | Tarefa | Prioridade | Status | Entrega |
 | ------ | -- | ------ | ---------- | ------ | ------- |
 | 1 | 
 | 2 | "Como membro da equipe de desenvolvimento, gostaria de criar uma interface do produto funcional, para proporcionar uma experiência de usuário agradável e eficiente." | Criar interface do produto. | 95 | 🛑 | 05/05 |
