@@ -26,7 +26,6 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 ## 📋 Backlog do Produto <a id="backlog"></a>
 | Sprint | User Stories (US)  | Tarefa | Prioridade | Status | Entrega |
 | ------ | -- | ------ | ---------- | ------ | ------- |
-| 1 | 
 | 2 | "Como membro da equipe de desenvolvimento, gostaria de criar uma interface do produto funcional, para proporcionar uma experiência de usuário agradável e eficiente." | Criar interface do produto. | 95 | 🛑 | 05/05 |
 | 2 | "Como desenvolvedor da aplicação, gostaria de implementar uma lógica robusta para acessar e buscar dados no banco de dados, para garantir que a aplicação seja capaz de recuperar informações relevantes de forma eficiente e precisa." |Implementar lógica para acessar e buscar dados no banco de dados.  | 90 | 🛑 | 05/05 |
 | 2 | "Como um administrador do sistema, gostaria de importar dados externos para o banco de dados da aplicação." |Importação e acesso ao Banco de Dados.  | 85 | 🛑 | 05/05 |
