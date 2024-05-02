@@ -40,7 +40,7 @@ public class GUI extends JFrame {
 //    }
 
                 SwingUtilities.invokeLater(() -> {
-                    JFrame frame = new JFrame("Chat Interface");
+                    JFrame frame = new JFrame("Java Quest");
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setSize(400, 600);
 
