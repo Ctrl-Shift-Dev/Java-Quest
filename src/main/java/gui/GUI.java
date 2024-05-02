@@ -71,13 +71,16 @@ public class GUI extends JFrame {
                         @Override
                         public void actionPerformed(ActionEvent e) {
                             String input = inputField.getText();
-                            chatArea.append("Voce\t \n\n" + input + "\n\n");
+                            chatArea.append("You\t \n\n" + input + "\n\n");
                             SqlCoder prompt = new SqlCoder();
                             chatArea.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
                             prompt.setRequest(input);
                             inputField.setText("");
-                            chatArea.append(String.valueOf((prompt)));
+                            chatArea.append("Bot:\n");
                             chatArea.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
+                            chatArea.append(String.valueOf(prompt));
+                            chatArea.append("\n\n");
+
                         }
 
                     });

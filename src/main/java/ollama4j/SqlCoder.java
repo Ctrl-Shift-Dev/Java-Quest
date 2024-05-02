@@ -26,7 +26,7 @@ public class SqlCoder {
 
         OllamaAPI ollamaAPI = new OllamaAPI(host);
 
-        ollamaAPI.setRequestTimeoutSeconds(10);
+        ollamaAPI.setRequestTimeoutSeconds(100000);
 
         OllamaResult result = ollamaAPI.generate(OllamaModelType.SQLCODER, getRequest(), new OptionsBuilder().build());
 
