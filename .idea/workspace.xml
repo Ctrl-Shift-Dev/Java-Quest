@@ -88,6 +88,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\matma\OneDrive\Documentos\GitHub\Java-Quest\src\img" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.GUI">
     <configuration name="ConnectionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="factory.ConnectionTest" />
