@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f563e4bd-413f-4d3f-a7e5-fb8c93d07d4e" name="Changes" comment="project body with gradle; firsts AI implemetations">
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/ConnectionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/factory/ConnectionTest.java" afterDir="false" />
+    <list default="true" id="f563e4bd-413f-4d3f-a7e5-fb8c93d07d4e" name="Changes" comment="Add Logo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ollama4j/SqlCoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ollama4j/SqlCoder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +47,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;brenoasj&quot;
-  }
-}</component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {}
+}]]></component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Ctrl-Shift-Dev/Java-Quest.git&quot;,
@@ -70,7 +63,9 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2euMGAe7w1HUm0F9eoWgk3S6vG0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -93,7 +88,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.ConnectionTest">
+  <component name="RunManager" selected="Application.GUI">
     <configuration name="ConnectionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="factory.ConnectionTest" />
       <module name="Java-Quest.main" />
@@ -152,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712839566078</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add Logo">
+      <option name="closed" value="true" />
+      <created>1714950894568</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714950894578</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -171,6 +174,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project body with gradle; firsts AI implemetations" />
-    <option name="LAST_COMMIT_MESSAGE" value="project body with gradle; firsts AI implemetations" />
+    <MESSAGE value="Add Logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Logo" />
   </component>
 </project>
