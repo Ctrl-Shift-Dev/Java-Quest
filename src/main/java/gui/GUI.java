@@ -41,6 +41,8 @@ public class GUI extends JFrame {
 
                 SwingUtilities.invokeLater(() -> {
                     JFrame frame = new JFrame("Java Quest");
+                    ImageIcon icon = new ImageIcon("src/img/logo_jq.png");
+                    frame.setIconImage(icon.getImage());
                     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                     frame.setSize(400, 600);
 
@@ -49,7 +51,9 @@ public class GUI extends JFrame {
 
                     JTextArea chatArea = new JTextArea();
                     chatArea.setEditable(false);
-                    chatArea.setFont(new Font("Arial", Font.PLAIN, 20));
+                    chatArea.setFont(new Font("Arial", Font.PLAIN, 16));
+                    chatArea.setBackground(Color.darkGray);
+                    chatArea.setForeground(Color.WHITE);
                     JScrollPane scrollPane = new JScrollPane(chatArea);
                     panel.add(scrollPane, BorderLayout.CENTER);
 
@@ -58,14 +62,16 @@ public class GUI extends JFrame {
                     panel.add(bottomPanel, BorderLayout.SOUTH);
 
                     JTextField inputField = new JTextField(20);
-                    inputField.setFont(new Font("Arial", Font.PLAIN, 20));
+                    inputField.setFont(new Font("Arial", Font.PLAIN, 16));
                     bottomPanel.add(inputField);
 
                     JPanel buttonPanel = new JPanel();
                     buttonPanel.setLayout(new FlowLayout());
                     bottomPanel.add(buttonPanel);
 
-                    JButton sendButton = new JButton("Enviar");
+                    JButton sendButton = new JButton("Send");
+                    sendButton.setForeground(Color.WHITE);
+                    sendButton.setBackground(Color.darkGray);
                     sendButton.addActionListener(new ActionListener() {
 
                         @Override
@@ -86,7 +92,9 @@ public class GUI extends JFrame {
                     });
                     buttonPanel.add(sendButton);
 
-                    JButton clearButton = new JButton("Limpar");
+                    JButton clearButton = new JButton("Clear");
+                    clearButton.setForeground(Color.WHITE);
+                    clearButton.setBackground(Color.darkGray);
                     clearButton.addActionListener(new ActionListener() {
                         @Override
                         public void actionPerformed(ActionEvent e) {
