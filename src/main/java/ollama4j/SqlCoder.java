@@ -27,12 +27,12 @@ public class SqlCoder {
 
         OllamaAPI ollamaAPI = new OllamaAPI(host);
 
-        ollamaAPI.setRequestTimeoutSeconds(10);
+        ollamaAPI.setRequestTimeoutSeconds(1000);
 
         PromptBuilder promptBuilder = new PromptBuilder()
                 .addLine("You are an expert data engineering")
                 .addLine("Given a question follow this sentence:")
-                .addLine("Generate a SQL query that answers the question {question}")
+                .addLine("Generate a SQL query that answers the question: {" + getRequest() + "}")
                 .addSeparator()
                 .addLine("This query will run on a database whose schema is represented in this string:")
                 .addLine("```sql")
@@ -69,10 +69,10 @@ public class SqlCoder {
                 .addLine("  `Percentage` float(4,1) NOT NULL DEFAULT 0.0")
                 .addLine("  PRIMARY KEY (`CountryCode`,`Language`)")
                 .addLine("```")
-                .addSeparator()
-                .add(getRequest());
+                .addSeparator();
+                //.add(getRequest());
 
-        OllamaResult result = ollamaAPI.generate(OllamaModelType.SQLCODER, promptBuilder.build(), new OptionsBuilder().build());
+        OllamaResult result = ollamaAPI.generate(OllamaModelType.DUCKDB_NSQL, promptBuilder.build(), new OptionsBuilder().build());
 
         return result.getResponse();
     }

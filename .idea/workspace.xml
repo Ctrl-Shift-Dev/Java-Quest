@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f563e4bd-413f-4d3f-a7e5-fb8c93d07d4e" name="Changes" comment="Add logo">
+    <list default="true" id="f563e4bd-413f-4d3f-a7e5-fb8c93d07d4e" name="Changes" comment="Chance Front">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ollama4j/SqlCoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ollama4j/SqlCoder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,15 +54,15 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Ctrl-Shift-Dev/Java-Quest.git&quot;,
-    &quot;accountId&quot;: &quot;79ba9792-4b4a-43f6-9dc9-b481459e5d91&quot;
-  }
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
 }</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Ctrl-Shift-Dev/Java-Quest.git",
+    "accountId": "6b03607e-60b6-442f-8a4e-5008e6f8a279"
+  }
+}]]></component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -183,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714951279869</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Chance Front">
+      <option name="closed" value="true" />
+      <created>1714952420232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1714952420232</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -205,6 +213,7 @@
     <MESSAGE value="Add Logo" />
     <MESSAGE value="~Remove Logo" />
     <MESSAGE value="Add logo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add logo" />
+    <MESSAGE value="Chance Front" />
+    <option name="LAST_COMMIT_MESSAGE" value="Chance Front" />
   </component>
 </project>
