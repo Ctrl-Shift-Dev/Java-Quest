@@ -45,7 +45,6 @@ public class SqlCoder {
                 .addLine(" `District` char(20) NOT NULL DEFAULT")
                 .addLine(" `Population` int(11) NOT NULL DEFAULT 0")
                 .addLine("  PRIMARY KEY (`ID`)")
-                .addLine("")
                 .addLine(" CREATE TABLE `country`")
                 .addLine("  `Code` char(3) NOT NULL DEFAULT")
                 .addLine("  `Name` char(52) NOT NULL DEFAULT")
@@ -63,14 +62,12 @@ public class SqlCoder {
                 .addLine("  `Capital` int(11) DEFAULT NULL")
                 .addLine("  `Code2` char(2) NOT NULL DEFAULT")
                 .addLine("  PRIMARY KEY (`Code`)")
-                .addLine("")
                 .addLine(" CREATE TABLE `countrylanguage`")
                 .addLine("  `CountryCode` char(3) NOT NULL DEFAULT")
                 .addLine("  `Language` char(30) NOT NULL DEFAULT")
                 .addLine("  `IsOfficial` enum('T','F') NOT NULL DEFAULT 'F'")
                 .addLine("  `Percentage` float(4,1) NOT NULL DEFAULT 0.0")
                 .addLine("  PRIMARY KEY (`CountryCode`,`Language`)")
-                .addLine("```")
                 .addSeparator();
         //.add(getRequest());
 
