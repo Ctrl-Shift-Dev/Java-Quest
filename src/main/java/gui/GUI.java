@@ -22,7 +22,7 @@ public class GUI extends JFrame {
             ImageIcon icon = new ImageIcon("src/img/logo_jq.png");
             frame.setIconImage(icon.getImage());
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setSize(400, 600);
+            frame.setSize(900, 600);
 
             JPanel panel = new JPanel(new BorderLayout());
             frame.add(panel);
@@ -78,7 +78,7 @@ public class GUI extends JFrame {
                         ResultSet resultSet = statement.executeQuery(generatedSql);
 
                         chatArea.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
-                        chatArea.append("Bot:\n");
+                        chatArea.append("Bot:\n\n");
                         chatArea.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 
                         while (resultSet.next()) {

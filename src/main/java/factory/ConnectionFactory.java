@@ -53,15 +53,15 @@ public class ConnectionFactory {
     }
 
 
-    public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/world";
-        String user = "root";
-        String password = "fatec";
-
-        ConnectionFactory connector = new ConnectionFactory(url, user, password);
-        connector.connect();
-        Connection connection = connector.getConnection();
-
-        connector.close();
-    }
+//    public static void main(String[] args) {
+//        String url = "jdbc:mysql://localhost:3306/world";
+//        String user = "root";
+//        String password = "fatec";
+//
+//        ConnectionFactory connector = new ConnectionFactory(url, user, password);
+//        connector.connect();
+//        Connection connection = connector.getConnection();
+//
+//        connector.close();
+//    }
 }
