@@ -15,7 +15,7 @@ public class ConnectionFactory {
     public ConnectionFactory(String url, String user, String password) {
         this.url = "jdbc:mysql://localhost:3306/world";
         this.user = "root";
-        this.password = "root";
+        this.password = "fatec";
     }
 
     public void connect() {

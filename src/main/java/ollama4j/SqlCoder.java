@@ -29,7 +29,7 @@ public class SqlCoder {
 
         OllamaAPI ollamaAPI = new OllamaAPI(host);
 
-        ollamaAPI.setRequestTimeoutSeconds(1000);
+        ollamaAPI.setRequestTimeoutSeconds(100000);
 
         PromptBuilder promptBuilder = new PromptBuilder()
                 .addLine("You are an expert data engineering")
