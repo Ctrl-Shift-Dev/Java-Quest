@@ -41,7 +41,7 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 
 
 ### 1ª SPRINT
-  <a href ="[https://www.figma.com/proto/zMqLJJIwJ5Tw2HcVC3Mo9C/PrototipoFigma?page-id=0%3A1&type=design&node-id=1-22&viewport=9575%2C5381%2C0.53&t=oJcADT6DMsE9rUeG-1&scaling=min-zoom&starting-point-node-id=2%3A110&mode=design](https://www.figma.com/proto/bNFEwsGfg8pIybnFu66gm3/JavaQuest?node-id=27-4&starting-point-node-id=27%3A4)">Link para o protótipo no Figma</a>
+  <a href ="https://www.figma.com/proto/bNFEwsGfg8pIybnFu66gm3/JavaQuest?node-id=27-4&starting-point-node-id=27%3A4">Link para o protótipo no Figma</a>
 
 
 
