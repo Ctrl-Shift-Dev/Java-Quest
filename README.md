@@ -40,8 +40,12 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 | 4 | "Como um usuário da aplicação, gostaria de uma interface do usuário intuitiva e amigável, para facilitar a navegação, interação e compreensão das funcionalidades." |Aprimoramento da Interface do Usuário  | 20 | 🛑 | 16/06 |
 
 
-### 1ª SPRINT
+### 1ª Sprint
+
   <a href ="https://www.figma.com/proto/bNFEwsGfg8pIybnFu66gm3/JavaQuest?node-id=27-4&starting-point-node-id=27%3A4">Link para o protótipo no Figma</a>
+
+### 2ª Sprint
+
 
 
 
