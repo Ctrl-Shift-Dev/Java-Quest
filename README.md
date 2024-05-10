@@ -59,12 +59,16 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
         <li> Permitir ao usuário selecionar um banco de dados relacional. </li.>
         <li> Criação de uma tela para receber como entrada uma consulta escrita em linguagem natural. </li.>
         <li> Conversão da linguagem natural em código SQL. </li>
+        <li> Execução do comando SQL gerado no banco de dados selecionado.</li>
+        <li> Exibição dos resultados.</li>
    <ul>
 </details>
 <details>
    <summary>Não funcionais:</summary>
    <ul>
-   <li>Documentação via Github. </li>
+   <li> Manual do usuário.</li>
+   <li> Guia de instalação.</li>
+   <li> Usabilidade.</li>
 
    </ul>
 </details>
