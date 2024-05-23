@@ -1,5 +1,6 @@
 package ollama4j;
 
+import factory.ConnectionFactory;
 import io.github.amithkoujalgi.ollama4j.core.OllamaAPI;
 import io.github.amithkoujalgi.ollama4j.core.exceptions.OllamaBaseException;
 import io.github.amithkoujalgi.ollama4j.core.models.OllamaResult;
@@ -8,8 +9,9 @@ import io.github.amithkoujalgi.ollama4j.core.utils.OptionsBuilder;
 import io.github.amithkoujalgi.ollama4j.core.utils.PromptBuilder;
 
 import java.io.IOException;
+import java.sql.PreparedStatement;
 
-public class SqlCoder {
+public class NSQL {
 
 
     private String request;
@@ -68,8 +70,8 @@ public class SqlCoder {
                 .addLine("  `IsOfficial` enum('T','F') NOT NULL DEFAULT 'F'")
                 .addLine("  `Percentage` float(4,1) NOT NULL DEFAULT 0.0")
                 .addLine("  PRIMARY KEY (`CountryCode`,`Language`)")
+                .addLine("```")
                 .addSeparator();
-        //.add(getRequest());
 
         OllamaResult result = ollamaAPI.generate(OllamaModelType.DUCKDB_NSQL, promptBuilder.build(), new OptionsBuilder().build());
 

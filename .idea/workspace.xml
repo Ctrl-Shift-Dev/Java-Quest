@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f563e4bd-413f-4d3f-a7e5-fb8c93d07d4e" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-core-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-core-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-core.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/miglayout-swing.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/factory/TestConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/Chat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/ConnectionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/GUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ollama4j/SqlCoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ollama4j/NSQL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +41,11 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Java-Quest" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java-Quest" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
             </expand>
             <select />
@@ -59,7 +76,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/Ctrl-Shift-Dev/Java-Quest.git&quot;,
-    &quot;accountId&quot;: &quot;6b03607e-60b6-442f-8a4e-5008e6f8a279&quot;
+    &quot;accountId&quot;: &quot;79ba9792-4b4a-43f6-9dc9-b481459e5d91&quot;
   }
 }</component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -81,32 +98,37 @@
     "Application.Unnamed.executor": "Run",
     "Gradle.Build Java-Quest.executor": "Run",
     "Gradle.C:/Users/matma/OneDrive/Documentos/GitHub/Java-Quest [GUI.main()].executor": "Run",
+    "Gradle.Java-Quest [:Chat.main()].executor": "Run",
     "Gradle.Java-Quest [:ConnectionTest.main()].executor": "Run",
     "Gradle.Java-Quest [:GUI.main()].executor": "Run",
     "Gradle.Java-Quest [:Main.main()].executor": "Run",
+    "Gradle.Java-Quest [:TestConnection.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "500",
+    "git-widget-placeholder": "Teste",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Program Files (x86)/MySQL/Connector J 8.0",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Win10\IdeaProjects\Java-Quest\src\main\resources" />
       <recent name="C:\Users\matma\OneDrive\Documentos\GitHub\Java-Quest\src\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GUI">
-    <configuration name="ConnectionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="factory.ConnectionTest" />
+  <component name="RunManager" selected="Application.Chat">
+    <configuration name="Chat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.Chat" />
       <module name="Java-Quest.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="factory.*" />
+          <option name="PATTERN" value="gui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -127,9 +149,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="factory.TestConnection" />
+      <module name="Java-Quest.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="factory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ConnectionTest" />
+        <item itemvalue="Application.Chat" />
+        <item itemvalue="Application.TestConnection" />
         <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
