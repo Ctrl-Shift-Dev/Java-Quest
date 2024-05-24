@@ -14,7 +14,7 @@ public class ConnectionFactory {
 
             Dotenv dotenv = Dotenv.load();
 
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", dotenv.get("SQL_PASSWORD"));
+            return DriverManager.getConnection("jdbc:mysql://localhost:3306/esportes", "root", dotenv.get("SQL_PASSWORD"));
 
         } catch (SQLException e) {
             System.out.println("Erro de SQL: " + e.getMessage());

@@ -35,14 +35,11 @@ public class NSQL {
         ollamaAPI.setRequestTimeoutSeconds(100000);
 
         PromptBuilder promptBuilder = new PromptBuilder()
-                .addLine("You are an expert data engineering")
-                .addLine("Given a question follow this sentence:")
-                .addLine("Generate a SQL query that answers the question: {" + getRequest() + "}")
+                .addLine("/set system \"\"\"Here is the database schema that the SQL query will run on:")
                 .addSeparator()
-                .addLine("This query will run on a database whose schema is represented in this string:")
-                .addLine("```sql")
                 .addLine(Schema.getSqlSchema())
                 .addLine("```")
+                .addLine("Generate a SQL query that answers the question: {" + getRequest() + "}")
                 .addSeparator();
 
         OllamaResult result = ollamaAPI.generate(OllamaModelType.DUCKDB_NSQL, promptBuilder.build(), new OptionsBuilder().build());

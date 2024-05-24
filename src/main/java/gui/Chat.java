@@ -32,18 +32,23 @@ public class Chat extends JFrame {
         chat.setForeground(Color.white);
         chat.setEditable(false);
         chat.setLineWrap(true);
+        chat.setWrapStyleWord(true);
 
         JTextField input = new JTextField(30);
 
         JButton limparButton = new JButton("Limpar");
         limparButton.setBackground(Color.darkGray);
         limparButton.setForeground(Color.white);
-        limparButton.addActionListener(e -> input.setText(""));
+        limparButton.addActionListener(e -> {
+            input.setText(""); // Limpa o campo de entrada de texto
+            chat.setText(""); // Limpa a área de texto do chat
+        });
 
         JButton enviarButton = getEnviarButton(input, chat);
 
         JPanel panel = new JPanel();
         panel.setBackground(Color.darkGray); // Adiciona a mesma cor de fundo do painel de chat
+        panel.setLayout(new FlowLayout());
         panel.add(input);
         panel.add(enviarButton);
         panel.add(limparButton);
@@ -112,7 +117,6 @@ public class Chat extends JFrame {
         dbPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         dbPanel.setBackground(Color.darkGray); // Define a cor de fundo para coincidir com o frame principal
         dbPanel.setForeground(Color.white);    // Define a cor do texto para coincidir com o frame principal
-
 
         JComboBox<String> dbSelection = new JComboBox<>(new String[]{"Database 1", "Database 2"}); // Substitua pelos bancos de dados reais
         dbSelection.setSelectedIndex(-1); // Desselecionar por padrão
