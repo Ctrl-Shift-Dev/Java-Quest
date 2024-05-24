@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f563e4bd-413f-4d3f-a7e5-fb8c93d07d4e" name="Changes" comment="Coleta do Schema do Banco de dados">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/factory/Schema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Schema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ollama4j/NSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ollama4j/NSQL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,12 +63,23 @@
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Ctrl-Shift-Dev/Java-Quest.git",
-    "accountId": "9ea09bdb-3df1-4a6e-864d-61045358f03c"
-  }
+  <component name="GitHubPullRequestState"><![CDATA[{
+  "prStates": [
+    {
+      "id": {
+        "id": "PR_kwDOLip5os5wc0Ud",
+        "number": 3
+      },
+      "lastSeen": 1716549520287
+    }
+  ]
 }]]></component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Ctrl-Shift-Dev/Java-Quest.git&quot;,
+    &quot;accountId&quot;: &quot;9ea09bdb-3df1-4a6e-864d-61045358f03c&quot;
+  }
+}</component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -83,6 +96,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GUI.executor": "Run",
     "Application.Unnamed.executor": "Run",
     "Gradle.Build Java-Quest.executor": "Run",
     "Gradle.C:/Users/matma/OneDrive/Documentos/GitHub/Java-Quest [GUI.main()].executor": "Run",
@@ -96,7 +110,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "500",
-    "git-widget-placeholder": "Teste",
+    "git-widget-placeholder": "#3 on Teste",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Program Files (x86)/MySQL/Connector J 8.0",
     "project.structure.last.edited": "Libraries",
@@ -111,7 +126,7 @@
       <recent name="C:\Users\matma\OneDrive\Documentos\GitHub\Java-Quest\src\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Schema">
+  <component name="RunManager" selected="Application.GUI">
     <configuration name="Chat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.Chat" />
       <module name="Java-Quest.main" />
@@ -166,10 +181,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GUI" />
         <item itemvalue="Application.Schema" />
         <item itemvalue="Application.Chat" />
         <item itemvalue="Application.TestConnection" />
-        <item itemvalue="Application.GUI" />
       </list>
     </recent_temporary>
   </component>

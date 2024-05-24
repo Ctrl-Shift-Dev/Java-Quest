@@ -55,18 +55,18 @@ public class Schema {
         return sqlSchema;
     }
 
-//public static void main(String[] args) {
-//        ConnectionFactory connectionFactory = new ConnectionFactory();
-//        try (Connection connection = connectionFactory.getConnection()) {
-//            Schema schema = new Schema(connection);
-//            schema.generateDatabaseSchema();
-//
-//            // Usa a variável sqlSchema
-//            String sqlSchema = schema.getSqlSchema();
-//            System.out.println(sqlSchema);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
+public static void main(String[] args) {
+        ConnectionFactory connectionFactory = new ConnectionFactory();
+        try (Connection connection = connectionFactory.getConnection()) {
+            Schema schema = new Schema(connection);
+            schema.generateDatabaseSchema();
+
+            // Usa a variável sqlSchema
+            String sqlSchema = schema.getSqlSchema();
+            System.out.println(sqlSchema);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
