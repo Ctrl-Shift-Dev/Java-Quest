@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f563e4bd-413f-4d3f-a7e5-fb8c93d07d4e" name="Changes" comment="Coleta do Schema do Banco de dados" />
+    <list default="true" id="f563e4bd-413f-4d3f-a7e5-fb8c93d07d4e" name="Changes" comment="Coleta do Schema do Banco de dados">
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/Schema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Schema.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +64,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Ctrl-Shift-Dev/Java-Quest.git",
-    "accountId": "a6367daa-47a1-48b1-8164-c66253e0bfe0"
+    "accountId": "9ea09bdb-3df1-4a6e-864d-61045358f03c"
   }
 }]]></component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -79,36 +81,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Unnamed.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Build Java-Quest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.C:/Users/matma/OneDrive/Documentos/GitHub/Java-Quest [GUI.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Java-Quest [:Chat.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Java-Quest [:ConnectionTest.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Java-Quest [:GUI.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Java-Quest [:Main.main()].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.Java-Quest [:TestConnection.main()].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;500&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Teste&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files (x86)/MySQL/Connector J 8.0&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Unnamed.executor": "Run",
+    "Gradle.Build Java-Quest.executor": "Run",
+    "Gradle.C:/Users/matma/OneDrive/Documentos/GitHub/Java-Quest [GUI.main()].executor": "Run",
+    "Gradle.Java-Quest [:Chat.main()].executor": "Run",
+    "Gradle.Java-Quest [:ConnectionTest.main()].executor": "Run",
+    "Gradle.Java-Quest [:GUI.main()].executor": "Run",
+    "Gradle.Java-Quest [:Main.main()].executor": "Run",
+    "Gradle.Java-Quest [:Schema.main()].executor": "Run",
+    "Gradle.Java-Quest [:TestConnection.main()].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "500",
+    "git-widget-placeholder": "Teste",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Program Files (x86)/MySQL/Connector J 8.0",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Win10\IdeaProjects\Java-Quest\src\main\resources" />
       <recent name="C:\Users\matma\OneDrive\Documentos\GitHub\Java-Quest\src\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Chat">
+  <component name="RunManager" selected="Application.Schema">
     <configuration name="Chat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.Chat" />
       <module name="Java-Quest.main" />
@@ -135,6 +138,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Schema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="factory.Schema" />
+      <module name="Java-Quest.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="factory.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="factory.TestConnection" />
       <module name="Java-Quest.main" />
@@ -150,6 +166,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Schema" />
         <item itemvalue="Application.Chat" />
         <item itemvalue="Application.TestConnection" />
         <item itemvalue="Application.GUI" />
