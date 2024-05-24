@@ -48,7 +48,7 @@ public class Schema {
         return sqlSchema;
     }
 
-/*
+
     public static void main(String[] args) {
         ConnectionFactory connectionFactory = new ConnectionFactory();
         try (Connection connection = connectionFactory.getConnection()) {
@@ -62,5 +62,5 @@ public class Schema {
             e.printStackTrace();
         }
     }
-*/
+
 }
