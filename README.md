@@ -67,6 +67,8 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 </details>
 
 ## 📷 Vídeo Chatbot <a id="Vídeo Chatbot"></a>
+Assista ao vídeo da demonstração clicando na imagem abaixo. Você será redirecionado ao YouTube.
+
 [![](https://img.youtube.com/vi/LX35e2KcedY/0.jpg)](https://www.youtube.com/watch?v=LX35e2KcedY)
 
 
