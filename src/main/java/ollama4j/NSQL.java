@@ -10,10 +10,10 @@ import io.github.amithkoujalgi.ollama4j.core.utils.OptionsBuilder;
 import io.github.amithkoujalgi.ollama4j.core.utils.PromptBuilder;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class NSQL {
-
 
     private String request;
 
@@ -25,36 +25,37 @@ public class NSQL {
         return request;
     }
 
-
-    public String aiAnswer() throws OllamaBaseException, IOException, InterruptedException {
-
+    public String aiAnswer() throws OllamaBaseException, IOException, InterruptedException, SQLException {
         String host = "http://localhost:11434/";
 
         OllamaAPI ollamaAPI = new OllamaAPI(host);
-
         ollamaAPI.setRequestTimeoutSeconds(100000);
 
-        PromptBuilder promptBuilder = new PromptBuilder()
-                .addLine("You are an expert data engineering")
-                .addLine("Given a question follow this sentence:")
-                .addLine("Generate a SQL query that answers the question: {" + getRequest() + "}")
-                .addSeparator()
-                .addLine("This query will run on a database whose schema is represented in this string:")
-                .addLine("```sql")
-                .addLine(Schema.getSqlSchema())
-                .addLine("```")
-                .addSeparator();
+        try (Connection connection = new ConnectionFactory().getConnection()) {
+            Schema schema = new Schema(connection);
+            schema.generateDatabaseSchema();
+            String sqlSchema = Schema.getSqlSchema();
 
-        OllamaResult result = ollamaAPI.generate(OllamaModelType.DUCKDB_NSQL, promptBuilder.build(), new OptionsBuilder().build());
+            PromptBuilder promptBuilder = new PromptBuilder()
+                    .addLine("/set system \"\"\"Here is the database schema that the SQL query will run on:")
+                    .addSeparator()
+                    .addLine(sqlSchema)
+                    .addLine("```")
+                    .addLine("Generate a SQL query that answers the question: {" + getRequest() + "}")
+                    .addLine("Only use the tables and columns provided in the schema.")
+                    .addSeparator();
 
-        return result.getResponse();
+            OllamaResult result = ollamaAPI.generate(OllamaModelType.DUCKDB_NSQL, promptBuilder.build(), new OptionsBuilder().build());
+
+            return result.getResponse();
+        }
     }
 
     @Override
     public String toString() {
         try {
             return aiAnswer();
-        } catch (OllamaBaseException | InterruptedException | IOException e) {
+        } catch (OllamaBaseException | InterruptedException | IOException | SQLException e) {
             throw new RuntimeException(e);
         }
     }
