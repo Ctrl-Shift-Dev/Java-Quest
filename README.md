@@ -67,12 +67,7 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 </details>
 
 ## 📷 Vídeo Chatbot <a id="Vídeo Chatbot"></a>
-
-<p align="center">
-  <video src="src/video/GIF.mp4">
-    Seu navegador não suporta a tag de vídeo.
-  </video>
-</p>
+![](https://github.com/Ctrl-Shift-Dev/Java-Quest/blob/main/src/videos/gif.mp4)
 
 
 
