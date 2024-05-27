@@ -67,7 +67,7 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 </details>
 
 ## 📷 Vídeo Chatbot <a id="Vídeo Chatbot"></a>
-https://github.com/Ctrl-Shift-Dev/Java-Quest/blob/main/src/videos/GIF.mp4
+[![](https://img.youtube.com/vi/LX35e2KcedY/0.jpg)](https://www.youtube.com/watch?v=LX35e2KcedY)
 
 
 ## 🌎 Equipe <a id="equipe"></a>
