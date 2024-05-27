@@ -1,28 +1,25 @@
 package factory;
-import io.github.cdimascio.dotenv.Dotenv;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ConnectionFactory {
+    private static final Logger LOGGER = Logger.getLogger(ConnectionFactory.class.getName());
 
-    public Connection getConnection(){
+    public Connection getConnection() {
+        String url = "jdbc:mysql://localhost:3306/livros";
+        String user = "root";
+        String password = "apijava";
+        Connection conn = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            Dotenv dotenv = Dotenv.load();
-
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/world", "root", dotenv.get("SQL_PASSWORD"));
-
+            conn = DriverManager.getConnection(url, user, password);
+            LOGGER.log(Level.INFO, "Conexão com o banco de dados estabelecida com sucesso.");
         } catch (SQLException e) {
-            System.out.println("Erro de SQL: " + e.getMessage());
-
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-
+            LOGGER.log(Level.SEVERE, "Erro ao estabelecer conexão com o banco de dados.", e);
         }
-        return null;
+        return conn;
     }
 }
