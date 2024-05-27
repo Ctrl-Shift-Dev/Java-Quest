@@ -29,11 +29,11 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 | 2 | "Como membro da equipe de desenvolvimento, gostaria de criar uma interface do produto funcional, para proporcionar uma experiência de usuário agradável e eficiente." | Criar interface do produto. | 95 | ✅ | 05/05 |
 | 2 | "Como desenvolvedor da aplicação, gostaria de implementar uma lógica robusta para acessar e buscar dados no banco de dados, para garantir que a aplicação seja capaz de recuperar informações relevantes de forma eficiente e precisa." |Implementar lógica para acessar e buscar dados no banco de dados.  | 90 | ✅ | 05/05 |
 | 2 | "Como um administrador do sistema, gostaria de importar dados externos para o banco de dados da aplicação." |Importação e acesso ao Banco de Dados.  | 85 | ✅ | 05/05 |
-| 3 | "Como um administrador do sistema ou usuário avançado, gostaria de ter a capacidade de trocar entre diferentes bancos de dados de forma transparente, para permitir flexibilidade na escolha do sistema." |Desenvolver funcionalidade para troca entre diferentes bancos de dados.  | 75 | 🛑 | 26/05 |
-| 3 | "Como desenvolvedor, desejo ter múltiplos bancos de dados de teste disponíveis para simular diferentes cenários de troca de dados, garantindo assim a robustez e eficiência da ferramenta de troca no chat bot." |Criar banco de dados para realizar testes na ferramenta de troca entre banco de dados  | 70 | 🛑 | 26/05 |
-| 3 | "Como membro da equipe de qualidade de software, gostaria de elaborar cenários de teste para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar." |Criar cenários de teste para verificar integração com diferentes bancos de dados.  |65  | 🛑 | 26/05 |
-| 3 | "Como desenvolvedor responsável pela qualidade do código, gostaria de executar testes de unidade abrangentes na lógica de acesso a dados, para identificar e corrigir quaisquer falhas ou bugs que possam comprometer a integridade e o funcionamento correto da aplicação." |Executar testes de unidade e corrigir falhas.  | 60 | 🛑 | 26/05 |
-| 3 | "Como membro da equipe de qualidade de software, gostaria de elaborar cenários de teste abrangentes para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar, importar e operar corretamente em ambientes que utilizam diversos sistemas de gerenciamento de banco de dados." |Criar cenários de teste para verificar integração com diferentes bancos de dados.  | 55 | 🛑 | 26/05 |
+| 3 | "Como um administrador do sistema ou usuário avançado, gostaria de ter a capacidade de trocar entre diferentes bancos de dados de forma transparente, para permitir flexibilidade na escolha do sistema." |Desenvolver funcionalidade para troca entre diferentes bancos de dados.  | 75 | ✅ | 26/05 |
+| 3 | "Como desenvolvedor, desejo ter múltiplos bancos de dados de teste disponíveis para simular diferentes cenários de troca de dados, garantindo assim a robustez e eficiência da ferramenta de troca no chat bot." |Criar banco de dados para realizar testes na ferramenta de troca entre banco de dados  | 70 | ✅ | 26/05 |
+| 3 | "Como membro da equipe de qualidade de software, gostaria de elaborar cenários de teste para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar." |Criar cenários de teste para verificar integração com diferentes bancos de dados.  |65  | ✅ | 26/05 |
+| 3 | "Como desenvolvedor responsável pela qualidade do código, gostaria de executar testes de unidade abrangentes na lógica de acesso a dados, para identificar e corrigir quaisquer falhas ou bugs que possam comprometer a integridade e o funcionamento correto da aplicação." |Executar testes de unidade e corrigir falhas.  | 60 | ✅ | 26/05 |
+| 3 | "Como membro da equipe de qualidade de software, gostaria de elaborar cenários de teste abrangentes para verificar a integração da aplicação com diferentes bancos de dados, para garantir que a aplicação seja capaz de se conectar, importar e operar corretamente em ambientes que utilizam diversos sistemas de gerenciamento de banco de dados." |Criar cenários de teste para verificar integração com diferentes bancos de dados.  | 55 | ✅ | 26/05 |
 | 4 | "Como membro da equipe de desenvolvimento, gostaria de realizar uma revisão final abrangente do código e das funcionalidades da aplicação, para garantir que o código esteja livre de erros, siga as melhores práticas de desenvolvimento e atenda aos requisitos do usuário." |Realizar revisão final do código e funcionalidades.  | 40 | 🛑 | 16/06 |
 | 4 | "Como um desenvolvedor de sistemas de inteligência artificial (IA), desejo implementar uma função que permita a troca dinâmica entre diferentes IAs em tempo de execução. " | Implementar função para troca entre IAs | 30 | 🛑 | 16/06 |
 | 4 | "Como um usuário da aplicação, gostaria de uma interface do usuário intuitiva e amigável, para facilitar a navegação, interação e compreensão das funcionalidades." |Aprimoramento da Interface do Usuário  | 20 | 🛑 | 16/06 |
@@ -67,9 +67,8 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 </details>
 
 ## 📷 Vídeo Chatbot <a id="Vídeo Chatbot"></a>
-<video controls>
-  <source src="/videos/GIF.mp4" type="video/mp4">
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=LX35e2KcedY" frameborder="0" allowfullscreen></iframe>
+
 
 
 ## 🌎 Equipe <a id="equipe"></a>
