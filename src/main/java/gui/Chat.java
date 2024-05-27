@@ -32,18 +32,23 @@ public class Chat extends JFrame {
         chat.setForeground(Color.white);
         chat.setEditable(false);
         chat.setLineWrap(true);
+        chat.setWrapStyleWord(true);
 
         JTextField input = new JTextField(30);
 
         JButton limparButton = new JButton("Limpar");
         limparButton.setBackground(Color.darkGray);
         limparButton.setForeground(Color.white);
-        limparButton.addActionListener(e -> input.setText(""));
+        limparButton.addActionListener(e -> {
+            input.setText("");
+            chat.setText("");
+        });
 
         JButton enviarButton = getEnviarButton(input, chat);
 
         JPanel panel = new JPanel();
-        panel.setBackground(Color.darkGray); // Adiciona a mesma cor de fundo do painel de chat
+        panel.setBackground(Color.darkGray);
+        panel.setLayout(new FlowLayout());
         panel.add(input);
         panel.add(enviarButton);
         panel.add(limparButton);
@@ -61,34 +66,48 @@ public class Chat extends JFrame {
             input.setText("");
             chat.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
             chat.append("User: " + inputText + "\n");
-
+    
             try {
                 NSQL prompt = new NSQL();
                 prompt.setRequest(inputText);
-
+    
                 String sqlQuery = prompt.aiAnswer();
-
-                Connection conn = new ConnectionFactory().getConnection();
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery(sqlQuery);
-
-                chat.append("Java Quest: \n");
-
-                while (rs.next()) {
-                    chat.append(rs.getString(1));
-                    chat.append("\n");
+    
+                // Log da consulta SQL gerada no JTextArea
+                chat.append("Consulta SQL gerada: " + sqlQuery + "\n");
+    
+                try (Connection conn = new ConnectionFactory().getConnection()) {
+                    if (conn != null) {
+                        try (Statement stmt = conn.createStatement();
+                             ResultSet rs = stmt.executeQuery(sqlQuery)) {
+    
+                            chat.append("Java Quest: \n");
+    
+                            while (rs.next()) {
+                                chat.append(rs.getString(1));
+                                chat.append("\n");
+                            }
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                            chat.append("Erro de SQL: " + ex.getMessage() + "\n");
+                        }
+                    } else {
+                        chat.append("Erro: Conexão com o banco de dados não estabelecida.\n");
+                    }
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                    chat.append("Erro de SQL ao estabelecer conexão: " + ex.getMessage() + "\n");
                 }
-
-                conn.close();
-                stmt.close();
-                rs.close();
-
-            } catch (SQLException | InterruptedException | IOException | OllamaBaseException ex) {
-                throw new RuntimeException(ex);
+    
+            } catch (InterruptedException | IOException | OllamaBaseException | SQLException ex) {
+                ex.printStackTrace();
+                chat.append("Erro: " + ex.getMessage() + "\n");
             }
         });
         return enviarButton;
     }
+    
+    
 
     private static void showSplashScreen() {
         JFrame splashScreen = new JFrame(APP_TITLE);
@@ -98,63 +117,53 @@ public class Chat extends JFrame {
         splashScreen.setLocationRelativeTo(null);
         splashScreen.setIconImage(icon.getImage());
 
-
-        // Cria painel de imagem central
         JPanel imagePanel = new JPanel();
         imagePanel.setLayout(new BorderLayout());
-        ImageIcon frontImage = new ImageIcon("src/img/front.logo.png"); // Substitua pelo caminho da sua imagem
+        ImageIcon frontImage = new ImageIcon("src/img/front.logo.png");
         JLabel imageLabel = new JLabel(frontImage);
         imageLabel.setHorizontalAlignment(SwingConstants.CENTER);
         imagePanel.add(imageLabel, BorderLayout.CENTER);
 
-        // Cria painel de seleção de banco de dados
         JPanel dbPanel = new JPanel();
         dbPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
-        dbPanel.setBackground(Color.darkGray); // Define a cor de fundo para coincidir com o frame principal
-        dbPanel.setForeground(Color.white);    // Define a cor do texto para coincidir com o frame principal
+        dbPanel.setBackground(Color.darkGray);
+        dbPanel.setForeground(Color.white);
 
-
-        JComboBox<String> dbSelection = new JComboBox<>(new String[]{"Database 1", "Database 2"}); // Substitua pelos bancos de dados reais
-        dbSelection.setSelectedIndex(-1); // Desselecionar por padrão
+        JComboBox<String> dbSelection = new JComboBox<>(new String[]{"Database 1", "Database 2"});
+        dbSelection.setSelectedIndex(-1);
         dbPanel.add(new JLabel("Database:"));
         dbPanel.add(dbSelection);
 
-        // Cria botão de iniciar e desabilita inicialmente
         JButton startButton = new JButton("Iniciar");
         startButton.setEnabled(false);
         startButton.addActionListener(e -> {
-            splashScreen.dispose(); // Fecha a tela inicial
-            SwingUtilities.invokeLater(() -> new Chat().setVisible(true)); // Exibe a janela principal do chat
+            splashScreen.dispose();
+            SwingUtilities.invokeLater(() -> new Chat().setVisible(true));
         });
 
         dbSelection.addActionListener(e -> {
             if (dbSelection.getSelectedIndex() != -1) {
-                startButton.setEnabled(true); // Habilita o botão quando uma seleção for feita
+                startButton.setEnabled(true);
             } else {
-                startButton.setEnabled(false); // Desabilita o botão se nenhuma seleção for feita
+                startButton.setEnabled(false);
             }
         });
 
         dbPanel.add(startButton);
 
-        // Combina painéis de imagem e seleção
         JPanel contentPanel = new JPanel(new GridLayout(2, 1));
         contentPanel.add(imagePanel);
         contentPanel.add(dbPanel);
 
-        // Define a mesma cor de fundo para o painel de conteúdo
         contentPanel.setBackground(Color.darkGray);
         contentPanel.setForeground(Color.white);
 
         splashScreen.add(contentPanel, BorderLayout.CENTER);
-        splashScreen.setLocationRelativeTo(null); // Centraliza na tela
+        splashScreen.setLocationRelativeTo(null);
         splashScreen.setVisible(true);
     }
 
     public static void main(String[] args) {
-        // Exibe a tela inicial
         showSplashScreen();
-
-        // A janela principal do chat é lançada a partir do botão iniciar da tela inicial
     }
 }
