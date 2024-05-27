@@ -68,9 +68,11 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 
 ## 📷 Vídeo Chatbot <a id="Vídeo Chatbot"></a>
 
-<p aling=center>
-     <gif src="src/img/GIF.mp4" alt="GIF">
-</p>  
+<p align="center">
+  <video src="src/video/GIF.mp4">
+    Seu navegador não suporta a tag de vídeo.
+  </video>
+</p>
 
 
 
