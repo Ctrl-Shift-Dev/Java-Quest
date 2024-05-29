@@ -20,7 +20,7 @@ Além disso, outro desafio importante será garantir a qualidade e a robustez do
 ## 🥇 MVP <a id="mvp"></a>
 
 <p aling=center>
-     <img src="src/img/MVP.png" alt="MVP">
+     <img src="src/main/resources/img/MVP.png" alt="MVP">
 </p>     
 
 ## 📋 Backlog do Produto <a id="backlog"></a>

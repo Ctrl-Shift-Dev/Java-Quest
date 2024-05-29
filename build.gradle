@@ -14,8 +14,7 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter'
     implementation 'io.github.amithkoujalgi:ollama4j:1.0.64'
     implementation 'org.slf4j:slf4j-jdk14:2.0.13'
-    implementation 'mysql:mysql-connector-java:8.0.32'
-    implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+    implementation 'mysql:mysql-connector-java:8.0.33'
 }
 
 test {

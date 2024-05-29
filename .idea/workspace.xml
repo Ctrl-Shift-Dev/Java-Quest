@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f563e4bd-413f-4d3f-a7e5-fb8c93d07d4e" name="Changes" comment="Coleta do Schema do Banco de dados">
+      <change afterPath="$PROJECT_DIR$/src/main/java/gui/DBSelection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/info.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/MVP.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/MVP.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/front.logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/front.logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/img/logo_jq.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/img/logo_jq.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/factory/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/ConnectionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/factory/Schema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/factory/Schema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/gui/Chat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/gui/Chat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ollama4j/NSQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ollama4j/NSQL.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,28 +68,37 @@
         <option name="title" value="All" />
       </GitPushTagMode>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {}
 }</component>
-  <component name="GitHubPullRequestState"><![CDATA[{
-  "prStates": [
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
     {
-      "id": {
-        "id": "PR_kwDOLip5os5wc0Ud",
-        "number": 3
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOLip5os5wc0Ud&quot;,
+        &quot;number&quot;: 3
       },
-      "lastSeen": 1716549520287
+      &quot;lastSeen&quot;: 1716549520287
     }
   ]
-}]]></component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Ctrl-Shift-Dev/Java-Quest.git&quot;,
-    &quot;accountId&quot;: &quot;9ea09bdb-3df1-4a6e-864d-61045358f03c&quot;
-  }
 }</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Ctrl-Shift-Dev/Java-Quest.git",
+    "accountId": "79ba9792-4b4a-43f6-9dc9-b481459e5d91"
+  },
+  "editorReviewEnabled": false
+}]]></component>
+  <component name="JvmLoggingSettingsStorage">
+    <option name="loggerId" value="Slf4j" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -101,6 +120,7 @@
     "Gradle.Build Java-Quest.executor": "Run",
     "Gradle.C:/Users/matma/OneDrive/Documentos/GitHub/Java-Quest [GUI.main()].executor": "Run",
     "Gradle.Java-Quest [:Chat.main()].executor": "Run",
+    "Gradle.Java-Quest [:ConnectionFactory.main()].executor": "Run",
     "Gradle.Java-Quest [:ConnectionTest.main()].executor": "Run",
     "Gradle.Java-Quest [:GUI.main()].executor": "Run",
     "Gradle.Java-Quest [:Main.main()].executor": "Run",
@@ -110,6 +130,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "500",
+    "deletionFromPopupRequiresConfirmation": "false",
+    "full.screen.before.presentation.mode": "false",
     "git-widget-placeholder": "#3 on Teste",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -117,7 +139,7 @@
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "settings.sync"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -126,7 +148,7 @@
       <recent name="C:\Users\matma\OneDrive\Documentos\GitHub\Java-Quest\src\img" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GUI">
+  <component name="RunManager" selected="Application.Chat">
     <configuration name="Chat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.Chat" />
       <module name="Java-Quest.main" />
@@ -140,12 +162,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.GUI" />
+    <configuration name="ConnectionFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="factory.ConnectionFactory" />
       <module name="Java-Quest.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gui.*" />
+          <option name="PATTERN" value="factory.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -181,10 +203,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GUI" />
+        <item itemvalue="Application.ConnectionFactory" />
+        <item itemvalue="Application.TestConnection" />
         <item itemvalue="Application.Schema" />
         <item itemvalue="Application.Chat" />
-        <item itemvalue="Application.TestConnection" />
       </list>
     </recent_temporary>
   </component>

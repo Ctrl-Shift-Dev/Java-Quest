@@ -37,6 +37,7 @@ public class NSQL {
         PromptBuilder promptBuilder = new PromptBuilder()
                 .addLine("/set system \"\"\"Here is the database schema that the SQL query will run on:")
                 .addSeparator()
+                .addLine("```sql")
                 .addLine(Schema.getSqlSchema())
                 .addLine("```")
                 .addLine("Generate a SQL query that answers the question: {" + getRequest() + "}")

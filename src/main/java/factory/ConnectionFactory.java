@@ -1,28 +1,76 @@
 package factory;
-import io.github.cdimascio.dotenv.Dotenv;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.Properties;
+
 
 public class ConnectionFactory {
 
-    public Connection getConnection(){
+    private String url;
+    private String user;
+    private String password;
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public ConnectionFactory() {
+        runProperties();
+
+    }
+
+    public void runProperties() {
+
+        Properties properties = new Properties();
+
+        try (FileInputStream file = new FileInputStream("src/main/resources/info.properties")) {
+            properties.load(file);
+            url = properties.getProperty("url");
+            user = properties.getProperty("user");
+            password = properties.getProperty("password");
+
+        } catch (IOException e) {
+            System.out.println("Erro: " + e.getMessage());
+
+        }
+    }
+
+    public Connection getConnection() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            Dotenv dotenv = Dotenv.load();
-
-            return DriverManager.getConnection("jdbc:mysql://localhost:3306/esportes", "root", dotenv.get("SQL_PASSWORD"));
+            return DriverManager.getConnection(url, user, password);
 
         } catch (SQLException e) {
-            System.out.println("Erro de SQL: " + e.getMessage());
-
-        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
 
         }
-        return null;
+    }
+
+    public static void main(String[] args) {
+        try {
+            Connection connection = new ConnectionFactory().getConnection();
+            if (connection != null) {
+                System.out.println("Conexão aberta!");
+                connection.close();
+
+            } else {
+                System.out.println("Falha na concexão");
+
+            }
+        } catch (SQLException e) {
+            System.out.println("Erro ao conectar: " + e.getMessage());
+
+        }
     }
 }
