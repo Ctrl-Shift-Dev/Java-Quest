@@ -17,6 +17,7 @@ public class Chat extends JFrame {
     private static final String APP_TITLE = "Java Quest";
     private static final int FRAME_WIDTH = 500;
     private static final int FRAME_HEIGHT = 600;
+    private static String selectedDatabase;
 
     public Chat() {
         setTitle(APP_TITLE);
@@ -57,7 +58,7 @@ public class Chat extends JFrame {
         add(panel, BorderLayout.SOUTH);
     }
 
-    private static JButton getEnviarButton(JTextField input, JTextArea chat) {
+    private JButton getEnviarButton(JTextField input, JTextArea chat) {
         JButton enviarButton = new JButton("Enviar");
         enviarButton.setBackground(Color.darkGray);
         enviarButton.setForeground(Color.white);
@@ -66,23 +67,28 @@ public class Chat extends JFrame {
             input.setText("");
             chat.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
             chat.append("User: " + inputText + "\n");
-    
+
             try {
-                NSQL prompt = new NSQL();
+                if (selectedDatabase == null) {
+                    chat.append("Erro: Nenhum banco de dados selecionado.\n");
+                    return;
+                }
+
+                NSQL prompt = new NSQL(selectedDatabase);
                 prompt.setRequest(inputText);
-    
+
                 String sqlQuery = prompt.aiAnswer();
-    
+
                 // Log da consulta SQL gerada no JTextArea
                 chat.append("Consulta SQL gerada: " + sqlQuery + "\n");
-    
-                try (Connection conn = new ConnectionFactory().getConnection()) {
+
+                try (Connection conn = new ConnectionFactory(selectedDatabase).getConnection()) {
                     if (conn != null) {
                         try (Statement stmt = conn.createStatement();
                              ResultSet rs = stmt.executeQuery(sqlQuery)) {
-    
+
                             chat.append("Java Quest: \n");
-    
+
                             while (rs.next()) {
                                 chat.append(rs.getString(1));
                                 chat.append("\n");
@@ -98,7 +104,7 @@ public class Chat extends JFrame {
                     ex.printStackTrace();
                     chat.append("Erro de SQL ao estabelecer conexão: " + ex.getMessage() + "\n");
                 }
-    
+
             } catch (InterruptedException | IOException | OllamaBaseException | SQLException ex) {
                 ex.printStackTrace();
                 chat.append("Erro: " + ex.getMessage() + "\n");
@@ -106,8 +112,6 @@ public class Chat extends JFrame {
         });
         return enviarButton;
     }
-    
-    
 
     private static void showSplashScreen() {
         JFrame splashScreen = new JFrame(APP_TITLE);
@@ -129,9 +133,9 @@ public class Chat extends JFrame {
         dbPanel.setBackground(Color.darkGray);
         dbPanel.setForeground(Color.white);
 
-        JComboBox<String> dbSelection = new JComboBox<>(new String[]{"Database 1", "Database 2"});
+        JComboBox<String> dbSelection = new JComboBox<>(new String[]{"Livros", "Esportes", "Viagens"});
         dbSelection.setSelectedIndex(-1);
-        dbPanel.add(new JLabel("Database:"));
+        dbPanel.add(new JLabel("Selecione um Banco de Dados:"));
         dbPanel.add(dbSelection);
 
         JButton startButton = new JButton("Iniciar");
@@ -143,6 +147,7 @@ public class Chat extends JFrame {
 
         dbSelection.addActionListener(e -> {
             if (dbSelection.getSelectedIndex() != -1) {
+                selectedDatabase = (String) dbSelection.getSelectedItem();
                 startButton.setEnabled(true);
             } else {
                 startButton.setEnabled(false);
