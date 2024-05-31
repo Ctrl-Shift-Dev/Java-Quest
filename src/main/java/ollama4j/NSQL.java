@@ -16,6 +16,11 @@ import java.sql.SQLException;
 public class NSQL {
 
     private String request;
+    private String databaseType;
+
+    public NSQL(String databaseType) {
+        this.databaseType = databaseType;
+    }
 
     public void setRequest(String request) {
         this.request = request;
@@ -31,7 +36,7 @@ public class NSQL {
         OllamaAPI ollamaAPI = new OllamaAPI(host);
         ollamaAPI.setRequestTimeoutSeconds(100000);
 
-        try (Connection connection = new ConnectionFactory().getConnection()) {
+        try (Connection connection = new ConnectionFactory(databaseType).getConnection()) {
             Schema schema = new Schema(connection);
             schema.generateDatabaseSchema();
             String sqlSchema = Schema.getSqlSchema();
