@@ -6,8 +6,10 @@ public class TestConnection {
 
     public static void main(String[] args) throws SQLException {
 
+        String databaseType = "Livros";
+
         try {
-            Connection connection = new ConnectionFactory().getConnection();
+            Connection connection = new ConnectionFactory(databaseType).getConnection();
             if (connection != null) {
                 System.out.println("Conexão aberta!");
                 connection.close();
