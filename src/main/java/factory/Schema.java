@@ -43,6 +43,7 @@ public class Schema {
             }
             columnsResultSet.close();
 
+            // Remove a última vírgula e nova linha
             schemaBuilder.setLength(schemaBuilder.length() - 2);
             schemaBuilder.append("\n);\n");
         }
@@ -56,7 +57,8 @@ public class Schema {
     }
 
     public static void main(String[] args) {
-        ConnectionFactory connectionFactory = new ConnectionFactory();
+        String databaseType = "Livros"; // Defina o tipo de banco de dados apropriado aqui
+        ConnectionFactory connectionFactory = new ConnectionFactory(databaseType);
         try (Connection connection = connectionFactory.getConnection()) {
             Schema schema = new Schema(connection);
             schema.generateDatabaseSchema();
