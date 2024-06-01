@@ -15,9 +15,10 @@ import java.sql.Statement;
 public class Chat extends JFrame {
 
     private static final String APP_TITLE = "Java Quest";
-    private static final int FRAME_WIDTH = 500;
-    private static final int FRAME_HEIGHT = 600;
+    private static final int FRAME_WIDTH = 700;
+    private static final int FRAME_HEIGHT = 700;
     private static String selectedDatabase;
+    private static String selectedAI;
 
     public Chat() {
         setTitle(APP_TITLE);
@@ -47,12 +48,23 @@ public class Chat extends JFrame {
 
         JButton enviarButton = getEnviarButton(input, chat);
 
+        JButton voltarButton = new JButton("Voltar");
+        voltarButton.setBackground(Color.darkGray);
+        voltarButton.setForeground(Color.white);
+        voltarButton.addActionListener(e -> {
+            dispose();
+            selectedAI = null;
+            selectedDatabase = null;
+            showSelectionScreen();
+        });
+
         JPanel panel = new JPanel();
         panel.setBackground(Color.darkGray);
         panel.setLayout(new FlowLayout());
         panel.add(input);
         panel.add(enviarButton);
         panel.add(limparButton);
+        panel.add(voltarButton); // Adicionando o botão "Voltar" ao painel
 
         add(new JScrollPane(chat), BorderLayout.CENTER);
         add(panel, BorderLayout.SOUTH);
@@ -69,14 +81,17 @@ public class Chat extends JFrame {
             chat.append("User: " + inputText + "\n");
 
             try {
+                if (selectedAI == null){
+                    chat.append("Erro: Nenhuma IA foi selecionada. \n");
+                    return;
+                }
                 if (selectedDatabase == null) {
                     chat.append("Erro: Nenhum banco de dados selecionado.\n");
                     return;
                 }
 
-                NSQL prompt = new NSQL(selectedDatabase);
+                NSQL prompt = new NSQL(selectedAI);
                 prompt.setRequest(inputText);
-
                 String sqlQuery = prompt.aiAnswer();
 
                 // Log da consulta SQL gerada no JTextArea
@@ -135,19 +150,43 @@ public class Chat extends JFrame {
 
         JComboBox<String> dbSelection = new JComboBox<>(new String[]{"Livros", "Esportes", "Viagens"});
         dbSelection.setSelectedIndex(-1);
-        dbPanel.add(new JLabel("Selecione um Banco de Dados:"));
+        JLabel dbLabel = new JLabel("Selecione um Banco de Dados:");
+        dbLabel.setForeground(Color.white);
+        dbPanel.add(dbLabel);
         dbPanel.add(dbSelection);
+
+        JComboBox<String> aiSelection = new JComboBox<>(new String[]{"NSQL", "IA-2", "IA-3"});
+        aiSelection.setSelectedIndex(-1);
+        JLabel aiLabel = new JLabel("Selecione uma IA:");
+        aiLabel.setForeground(Color.white);
+        dbPanel.add(aiLabel);
+        dbPanel.add(aiSelection);
 
         JButton startButton = new JButton("Iniciar");
         startButton.setEnabled(false);
         startButton.addActionListener(e -> {
-            splashScreen.dispose();
-            SwingUtilities.invokeLater(() -> new Chat().setVisible(true));
+            if (dbSelection.getSelectedIndex() != -1 && aiSelection.getSelectedIndex() != -1) {
+                selectedDatabase = (String) dbSelection.getSelectedItem();
+                selectedAI = (String) aiSelection.getSelectedItem();
+                splashScreen.dispose();
+                SwingUtilities.invokeLater(() -> new Chat().setVisible(true));
+            }
         });
 
         dbSelection.addActionListener(e -> {
-            if (dbSelection.getSelectedIndex() != -1) {
+            if (dbSelection.getSelectedIndex() != -1 && aiSelection.getSelectedIndex() != -1) {
                 selectedDatabase = (String) dbSelection.getSelectedItem();
+                selectedAI = (String) aiSelection.getSelectedItem();
+                startButton.setEnabled(true);
+            } else {
+                startButton.setEnabled(false);
+            }
+        });
+
+        aiSelection.addActionListener(e -> {
+            if (dbSelection.getSelectedIndex() != -1 && aiSelection.getSelectedIndex() != -1) {
+                selectedDatabase = (String) dbSelection.getSelectedItem();
+                selectedAI = (String) aiSelection.getSelectedItem();
                 startButton.setEnabled(true);
             } else {
                 startButton.setEnabled(false);
@@ -166,6 +205,10 @@ public class Chat extends JFrame {
         splashScreen.add(contentPanel, BorderLayout.CENTER);
         splashScreen.setLocationRelativeTo(null);
         splashScreen.setVisible(true);
+    }
+
+    private static void showSelectionScreen() {
+        SwingUtilities.invokeLater(Chat::showSplashScreen);
     }
 
     public static void main(String[] args) {
