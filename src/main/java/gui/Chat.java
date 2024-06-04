@@ -90,7 +90,7 @@ public class Chat extends JFrame {
                     return;
                 }
 
-                NSQL prompt = new NSQL(selectedAI);
+                NSQL prompt = new NSQL(selectedDatabase, selectedAI);
                 prompt.setRequest(inputText);
                 String sqlQuery = prompt.aiAnswer();
 
