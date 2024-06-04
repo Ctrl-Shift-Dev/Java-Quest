@@ -17,9 +17,11 @@ public class NSQL {
 
     private String request;
     private String databaseType;
+    private String aiType;
 
-    public NSQL(String databaseType) {
+    public NSQL(String databaseType, String aiType) {
         this.databaseType = databaseType;
+        this.aiType = aiType;
     }
 
     public void setRequest(String request) {
@@ -29,6 +31,7 @@ public class NSQL {
     public String getRequest() {
         return request;
     }
+    
 
     public String aiAnswer() throws OllamaBaseException, IOException, InterruptedException, SQLException {
         String host = "http://localhost:11434/";
