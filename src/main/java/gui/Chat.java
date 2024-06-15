@@ -1,16 +1,13 @@
 package gui;
 
-import factory.ConnectionFactory;
 import io.github.amithkoujalgi.ollama4j.core.exceptions.OllamaBaseException;
 import ollama4j.NSQL;
+import ollama4j.SQLCoder;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class Chat extends JFrame {
 
@@ -38,6 +35,8 @@ public class Chat extends JFrame {
 
         JTextField input = new JTextField(30);
 
+        JButton enviarButton = getEnviarButton(input, chat);
+
         JButton limparButton = new JButton("Limpar");
         limparButton.setBackground(Color.darkGray);
         limparButton.setForeground(Color.white);
@@ -45,8 +44,6 @@ public class Chat extends JFrame {
             input.setText("");
             chat.setText("");
         });
-
-        JButton enviarButton = getEnviarButton(input, chat);
 
         JButton voltarButton = new JButton("Voltar");
         voltarButton.setBackground(Color.darkGray);
@@ -60,14 +57,28 @@ public class Chat extends JFrame {
 
         JPanel panel = new JPanel();
         panel.setBackground(Color.darkGray);
-        panel.setLayout(new FlowLayout());
-        panel.add(input);
-        panel.add(enviarButton);
-        panel.add(limparButton);
-        panel.add(voltarButton); // Adicionando o botão "Voltar" ao painel
+        panel.setLayout(new BorderLayout());
 
-        add(new JScrollPane(chat), BorderLayout.CENTER);
-        add(panel, BorderLayout.SOUTH);
+        JPanel inputPanel = new JPanel();
+        inputPanel.setBackground(Color.darkGray);
+        inputPanel.setLayout(new BorderLayout());
+        inputPanel.add(input, BorderLayout.CENTER);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setBackground(Color.darkGray);
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
+        buttonPanel.add(enviarButton);
+        buttonPanel.add(limparButton);
+        buttonPanel.add(voltarButton);
+
+        inputPanel.add(buttonPanel, BorderLayout.EAST);
+
+        panel.add(new JScrollPane(chat), BorderLayout.CENTER);
+        panel.add(inputPanel, BorderLayout.SOUTH);
+
+        add(panel);
+
+        setVisible(true);
     }
 
     private JButton getEnviarButton(JTextField input, JTextArea chat) {
@@ -75,57 +86,31 @@ public class Chat extends JFrame {
         enviarButton.setBackground(Color.darkGray);
         enviarButton.setForeground(Color.white);
         enviarButton.addActionListener(e -> {
-            String inputText = input.getText();
-            input.setText("");
-            chat.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
-            chat.append("User: " + inputText + "\n");
-
-            try {
-                if (selectedAI == null){
-                    chat.append("Erro: Nenhuma IA foi selecionada. \n");
-                    return;
-                }
-                if (selectedDatabase == null) {
-                    chat.append("Erro: Nenhum banco de dados selecionado.\n");
-                    return;
-                }
-
-                NSQL prompt = new NSQL(selectedDatabase, selectedAI);
-                prompt.setRequest(inputText);
-                String sqlQuery = prompt.aiAnswer();
-
-                // Log da consulta SQL gerada no JTextArea
-                chat.append("Consulta SQL gerada: " + sqlQuery + "\n");
-
-                try (Connection conn = new ConnectionFactory(selectedDatabase).getConnection()) {
-                    if (conn != null) {
-                        try (Statement stmt = conn.createStatement();
-                             ResultSet rs = stmt.executeQuery(sqlQuery)) {
-
-                            chat.append("Java Quest: \n");
-
-                            while (rs.next()) {
-                                chat.append(rs.getString(1));
-                                chat.append("\n");
-                            }
-                        } catch (SQLException ex) {
-                            ex.printStackTrace();
-                            chat.append("Erro de SQL: " + ex.getMessage() + "\n");
-                        }
-                    } else {
-                        chat.append("Erro: Conexão com o banco de dados não estabelecida.\n");
-                    }
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                    chat.append("Erro de SQL ao estabelecer conexão: " + ex.getMessage() + "\n");
-                }
-
-            } catch (InterruptedException | IOException | OllamaBaseException | SQLException ex) {
-                ex.printStackTrace();
-                chat.append("Erro: " + ex.getMessage() + "\n");
-            }
+            String query = input.getText();
+            chat.append("Você: " + query + "\n");
+            useSelectedAI(query, chat);
         });
         return enviarButton;
+    }
+
+    private void useSelectedAI(String query, JTextArea chat) {
+        try {
+            String response;
+            if ("NSQL".equals(selectedAI)) {
+                NSQL ai = new NSQL(selectedDatabase, selectedAI);
+                ai.setRequest(query);
+                response = ai.aiAnswer();
+            } else if ("SQLCoder".equals(selectedAI)) {
+                SQLCoder ai = new SQLCoder(selectedDatabase);
+                ai.setRequest(query);
+                response = ai.aiAnswer();
+            } else {
+                response = "IA não reconhecida.";
+            }
+            chat.append("Resposta da IA: " + response + "\n");
+        } catch (OllamaBaseException | IOException | InterruptedException | SQLException e) {
+            chat.append("Erro: " + e.getMessage() + "\n");
+        }
     }
 
     private static void showSplashScreen() {
@@ -155,38 +140,34 @@ public class Chat extends JFrame {
         dbPanel.add(dbLabel);
         dbPanel.add(dbSelection);
 
-        JComboBox<String> aiSelection = new JComboBox<>(new String[]{"NSQL", "IA-2", "IA-3"});
-        aiSelection.setSelectedIndex(-1);
+        JComboBox<String> aiComboBox = new JComboBox<>(new String[]{"NSQL", "SQLCoder"});
+        aiComboBox.setSelectedIndex(-1);
         JLabel aiLabel = new JLabel("Selecione uma IA:");
         aiLabel.setForeground(Color.white);
         dbPanel.add(aiLabel);
-        dbPanel.add(aiSelection);
+        dbPanel.add(aiComboBox);
 
         JButton startButton = new JButton("Iniciar");
         startButton.setEnabled(false);
         startButton.addActionListener(e -> {
-            if (dbSelection.getSelectedIndex() != -1 && aiSelection.getSelectedIndex() != -1) {
+            if (dbSelection.getSelectedIndex() != -1 && aiComboBox.getSelectedIndex() != -1) {
                 selectedDatabase = (String) dbSelection.getSelectedItem();
-                selectedAI = (String) aiSelection.getSelectedItem();
+                selectedAI = (String) aiComboBox.getSelectedItem();
                 splashScreen.dispose();
                 SwingUtilities.invokeLater(() -> new Chat().setVisible(true));
             }
         });
 
         dbSelection.addActionListener(e -> {
-            if (dbSelection.getSelectedIndex() != -1 && aiSelection.getSelectedIndex() != -1) {
-                selectedDatabase = (String) dbSelection.getSelectedItem();
-                selectedAI = (String) aiSelection.getSelectedItem();
+            if (dbSelection.getSelectedIndex() != -1 && aiComboBox.getSelectedIndex() != -1) {
                 startButton.setEnabled(true);
             } else {
                 startButton.setEnabled(false);
             }
         });
 
-        aiSelection.addActionListener(e -> {
-            if (dbSelection.getSelectedIndex() != -1 && aiSelection.getSelectedIndex() != -1) {
-                selectedDatabase = (String) dbSelection.getSelectedItem();
-                selectedAI = (String) aiSelection.getSelectedItem();
+        aiComboBox.addActionListener(e -> {
+            if (dbSelection.getSelectedIndex() != -1 && aiComboBox.getSelectedIndex() != -1) {
                 startButton.setEnabled(true);
             } else {
                 startButton.setEnabled(false);
