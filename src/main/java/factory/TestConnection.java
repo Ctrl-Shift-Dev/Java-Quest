@@ -15,7 +15,7 @@ public class TestConnection {
                 connection.close();
 
             } else {
-                System.out.println("Falha na concexão");
+                System.out.println("Falha na conexão");
 
             }
         } catch (SQLException e) {
