@@ -20,7 +20,7 @@ public class ConnectionFactory {
     public Connection getConnection() {
         String url;
         String user = "root";
-        String password = "apijava";
+        String password = "fatec";
 
         switch (databaseType) {
             case "Livros":
