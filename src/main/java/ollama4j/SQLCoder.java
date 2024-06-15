@@ -5,7 +5,6 @@ import factory.Schema;
 import io.github.amithkoujalgi.ollama4j.core.OllamaAPI;
 import io.github.amithkoujalgi.ollama4j.core.exceptions.OllamaBaseException;
 import io.github.amithkoujalgi.ollama4j.core.models.OllamaResult;
-import io.github.amithkoujalgi.ollama4j.core.types.OllamaModelType;
 import io.github.amithkoujalgi.ollama4j.core.utils.OptionsBuilder;
 import io.github.amithkoujalgi.ollama4j.core.utils.PromptBuilder;
 
@@ -47,6 +46,9 @@ public class SQLCoder {
             schema.generateDatabaseSchema();
             String sqlSchema = Schema.getSqlSchema();
 
+            // Convert aiType String to corresponding model name
+            String modelName = getModelNameFromString(aiType);
+
             PromptBuilder promptBuilder = new PromptBuilder()
                     .addLine("/set system \"\"\"Here is the database schema that the SQL query will run on:")
                     .addSeparator()
@@ -54,11 +56,25 @@ public class SQLCoder {
                     .addLine("```")
                     .addLine("Generate a SQL query that answers the question: {" + getRequest() + "}")
                     .addLine("Only use the tables and columns provided in the schema.")
+                    .addLine("After generating the SQL query, convert it into a natural language answer.")
+                    .addLine("SQL Query:")
+                    .addLine("Natural Language Answer:")
                     .addSeparator();
 
-            OllamaResult result = ollamaAPI.generate(OllamaModelType.SQLCODER, promptBuilder.build(), new OptionsBuilder().build());
+            OllamaResult result = ollamaAPI.generate(modelName, promptBuilder.build(), new OptionsBuilder().build());
 
             return result.getResponse();
+        }
+    }
+
+    private String getModelNameFromString(String aiType) {
+        switch (aiType.toUpperCase()) {
+            case "NSQL":
+                return "duckdb-nsql";
+            case "SQLCODER":
+                return "sqlcoder";
+            default:
+                throw new IllegalArgumentException("Tipo de IA não reconhecido: " + aiType);
         }
     }
 

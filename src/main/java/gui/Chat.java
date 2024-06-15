@@ -71,7 +71,7 @@ public class Chat extends JFrame {
         buttonPanel.add(limparButton);
         buttonPanel.add(voltarButton);
 
-        inputPanel.add(buttonPanel, BorderLayout.EAST);
+        inputPanel.add(buttonPanel, BorderLayout.SOUTH);
 
         panel.add(new JScrollPane(chat), BorderLayout.CENTER);
         panel.add(inputPanel, BorderLayout.SOUTH);
@@ -93,25 +93,25 @@ public class Chat extends JFrame {
         return enviarButton;
     }
 
-    private void useSelectedAI(String query, JTextArea chat) {
-        try {
-            String response;
-            if ("NSQL".equals(selectedAI)) {
-                NSQL ai = new NSQL(selectedDatabase, selectedAI);
-                ai.setRequest(query);
-                response = ai.aiAnswer();
-            } else if ("SQLCoder".equals(selectedAI)) {
-                SQLCoder ai = new SQLCoder(selectedDatabase);
-                ai.setRequest(query);
-                response = ai.aiAnswer();
-            } else {
-                response = "IA não reconhecida.";
+        private void useSelectedAI(String query, JTextArea chat) {
+            try {
+                String response;
+                if ("NSQL".equals(selectedAI)) {
+                    NSQL ai = new NSQL(selectedDatabase, selectedAI);
+                    ai.setRequest("Converta a seguinte consulta SQL para linguagem natural:\n" + query);
+                    response = ai.aiAnswer();
+                } else if ("SQLCoder".equals(selectedAI)) {
+                    SQLCoder ai = new SQLCoder(selectedDatabase);
+                    ai.setRequest("Converta a seguinte consulta SQL para linguagem natural:\n" + query);
+                    response = ai.aiAnswer();
+                } else {
+                    response = "IA não reconhecida.";
+                }
+                chat.append("Resposta da IA: " + response + "\n");
+            } catch (OllamaBaseException | IOException | InterruptedException | SQLException e) {
+                chat.append("Erro: " + e.getMessage() + "\n");
             }
-            chat.append("Resposta da IA: " + response + "\n");
-        } catch (OllamaBaseException | IOException | InterruptedException | SQLException e) {
-            chat.append("Erro: " + e.getMessage() + "\n");
         }
-    }
 
     private static void showSplashScreen() {
         JFrame splashScreen = new JFrame(APP_TITLE);
