@@ -50,16 +50,22 @@ public class SQLCoder {
             String modelName = getModelNameFromString(aiType);
 
             PromptBuilder promptBuilder = new PromptBuilder()
-                    .addLine("/set system \"\"\"Here is the database schema that the SQL query will run on:")
-                    .addSeparator()
-                    .addLine(sqlSchema)
-                    .addLine("```")
-                    .addLine("Generate a SQL query that answers the question: {" + getRequest() + "}")
-                    .addLine("Only use the tables and columns provided in the schema.")
-                    .addLine("After generating the SQL query, convert it into a natural language answer.")
-                    .addLine("SQL Query:")
-                    .addLine("Natural Language Answer:")
-                    .addSeparator();
+            .addLine("### Instructions:")
+            .addLine("Your task is to convert a question into a SQL query, given a Postgres database schema.")
+            .addLine("Adhere to these rules:")
+            .addLine("- **Deliberately go through the question and database schema word by word** to appropriately answer the question")
+            .addLine("- **Use Table Aliases** to prevent ambiguity. For example, `SELECT table1.col1, table2.col1 FROM table1 JOIN table2 ON table1.id = table2.id`.")
+            .addLine("- When creating a ratio, always cast the numerator as float")
+            .addLine("")
+            .addLine("### Input:")
+            .addLine("Generate a SQL query that answers the question {" + getRequest() + "}.")
+            .addLine("This query will run on a database whose schema is represented in this string:")
+            .addLine(sqlSchema)
+            .addLine("")
+            .addLine("### Response:")
+            .addLine("Based on your instructions, here is the SQL query I have generated to answer the question {" + getRequest() + "}:")
+            .addLine("```sql")
+            .addLine("```");        
 
             OllamaResult result = ollamaAPI.generate(modelName, promptBuilder.build(), new OptionsBuilder().build());
 

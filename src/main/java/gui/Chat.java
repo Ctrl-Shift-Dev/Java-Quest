@@ -5,8 +5,13 @@ import ollama4j.NSQL;
 import ollama4j.SQLCoder;
 
 import javax.swing.*;
+
+import factory.ConnectionFactory;
+
 import java.awt.*;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Chat extends JFrame {
@@ -93,25 +98,52 @@ public class Chat extends JFrame {
         return enviarButton;
     }
 
-        private void useSelectedAI(String query, JTextArea chat) {
-            try {
-                String response;
-                if ("NSQL".equals(selectedAI)) {
-                    NSQL ai = new NSQL(selectedDatabase, selectedAI);
-                    ai.setRequest("Converta a seguinte consulta SQL para linguagem natural:\n" + query);
-                    response = ai.aiAnswer();
-                } else if ("SQLCoder".equals(selectedAI)) {
-                    SQLCoder ai = new SQLCoder(selectedDatabase);
-                    ai.setRequest("Converta a seguinte consulta SQL para linguagem natural:\n" + query);
-                    response = ai.aiAnswer();
-                } else {
-                    response = "IA não reconhecida.";
-                }
-                chat.append("Resposta da IA: " + response + "\n");
-            } catch (OllamaBaseException | IOException | InterruptedException | SQLException e) {
-                chat.append("Erro: " + e.getMessage() + "\n");
+    private void useSelectedAI(String query, JTextArea chat) {
+        try {
+            if (selectedAI == null || selectedDatabase == null) {
+                chat.append("Erro: IA ou banco de dados não selecionados.\n");
+                return;
             }
+    
+            String sqlQuery = "";
+    
+            try {
+                NSQL ai = new NSQL(selectedDatabase, selectedAI);
+                ai.setRequest(query);
+                sqlQuery = ai.aiAnswer();
+            } catch (OllamaBaseException | IOException | InterruptedException | SQLException e) {
+                chat.append("Erro ao usar IA: " + e.getMessage() + "\n");
+                return;
+            }
+    
+            chat.append("Consulta SQL gerada: " + sqlQuery + "\n");
+    
+            try (Connection conn = new ConnectionFactory(selectedDatabase).getConnection()) {
+                if (conn != null) {
+                    try (java.sql.Statement stmt = conn.createStatement();
+                         ResultSet rs = stmt.executeQuery(sqlQuery)) {
+    
+                        chat.append("Java Quest:\n");
+    
+                        while (rs.next()) {
+                            chat.append(rs.getString(1));
+                            chat.append("\n");
+                        }
+                    } catch (SQLException ex) {
+                        chat.append("Erro de SQL: " + ex.getMessage() + "\n");
+                    }
+                } else {
+                    chat.append("Erro: Conexão com o banco de dados não estabelecida.\n");
+                }
+            } catch (SQLException ex) {
+                chat.append("Erro de SQL ao estabelecer conexão: " + ex.getMessage() + "\n");
+            }
+        } catch (Exception e) {
+            chat.append("Erro geral: " + e.getMessage() + "\n");
         }
+    }
+  
+    
 
     private static void showSplashScreen() {
         JFrame splashScreen = new JFrame(APP_TITLE);
