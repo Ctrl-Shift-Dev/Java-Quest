@@ -116,7 +116,7 @@ public class Chat extends JFrame {
                 return;
             }
     
-            chat.append("Consulta SQL gerada: " + sqlQuery + "\n");
+            // chat.append("Consulta SQL gerada: " + sqlQuery + "\n");
     
             try (Connection conn = new ConnectionFactory(selectedDatabase).getConnection()) {
                 if (conn != null) {
