@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class SQLCoder {
 
     private String request;
-    private String databaseType;
+    private final String databaseType;
     private String aiType;
 
     public SQLCoder(String databaseType, String aiType) {
@@ -74,14 +74,11 @@ public class SQLCoder {
     }
 
     private String getModelNameFromString(String aiType) {
-        switch (aiType.toUpperCase()) {
-            case "NSQL":
-                return "duckdb-nsql";
-            case "SQLCODER":
-                return "sqlcoder";
-            default:
-                throw new IllegalArgumentException("Tipo de IA não reconhecido: " + aiType);
-        }
+        return switch (aiType.toUpperCase()) {
+            case "NSQL" -> "duckdb-nsql";
+            case "SQLCODER" -> "sqlcoder";
+            default -> throw new IllegalArgumentException("Tipo de IA não reconhecido: " + aiType);
+        };
     }
 
     @Override

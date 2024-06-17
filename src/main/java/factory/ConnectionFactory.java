@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 public class ConnectionFactory {
     private static final Logger LOGGER = Logger.getLogger(ConnectionFactory.class.getName());
-    private String databaseType;
+    private final String databaseType;
 
     public ConnectionFactory(String databaseType) {
         if (databaseType == null || databaseType.isEmpty()) {
@@ -20,21 +20,14 @@ public class ConnectionFactory {
     public Connection getConnection() {
         String url;
         String user = "root";
-        String password = "fatec";
+        String password = "Mysql2002@";
 
-        switch (databaseType) {
-            case "Livros":
-                url = "jdbc:mysql://localhost:3306/livros";
-                break;
-            case "Esportes":
-                url = "jdbc:mysql://localhost:3306/esportes";
-                break;
-            case "Viagens":
-                url = "jdbc:mysql://localhost:3306/viagens";
-                break;
-            default:
-                throw new IllegalArgumentException("Banco de dados desconhecido: " + databaseType);
-        }
+        url = switch (databaseType) {
+            case "Livros" -> "jdbc:mysql://localhost:3306/livros";
+            case "Esportes" -> "jdbc:mysql://localhost:3306/esportes";
+            case "Viagens" -> "jdbc:mysql://localhost:3306/viagens";
+            default -> throw new IllegalArgumentException("Banco de dados desconhecido: " + databaseType);
+        };
 
         Connection conn = null;
         try {

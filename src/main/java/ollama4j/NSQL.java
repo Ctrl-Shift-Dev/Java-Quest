@@ -15,8 +15,8 @@ import java.sql.SQLException;
 public class NSQL {
 
     private String request;
-    private String databaseType;
-    private String aiType;
+    private final String databaseType;
+    private final String aiType;
 
     public NSQL(String databaseType, String aiType) {
         this.databaseType = databaseType;
@@ -40,14 +40,14 @@ public class NSQL {
         try (Connection connection = new ConnectionFactory(databaseType).getConnection()) {
             Schema schema = new Schema(connection);
             schema.generateDatabaseSchema();
-            String sqlSchema = Schema.getSqlSchema();
 
-            // Convert aiType String to corresponding model name
+            String sqlSchema = Schema.getSqlSchema();
             String modelName = getModelNameFromString(aiType);
 
             PromptBuilder promptBuilder = new PromptBuilder()
                     .addLine("/set system \"\"\"Here is the database schema that the SQL query will run on:")
                     .addSeparator()
+                    .addLine("```sql")
                     .addLine(sqlSchema)
                     .addLine("```")
                     .addLine("Generate a SQL query that answers the question: {" + getRequest() + "}")
@@ -62,14 +62,10 @@ public class NSQL {
     }
 
     private String getModelNameFromString(String aiType) {
-        switch (aiType.toUpperCase()) {
-            case "NSQL":
-                return "duckdb-nsql";
-            case "SQLCODER":
-                return "sqlcoder";
-            default:
-                throw new IllegalArgumentException("Tipo de IA não reconhecido: " + aiType);
-        }
+        return switch (aiType.toUpperCase()) {
+            case "NSQL", "SQLCODER" -> "duckdb-nsql";
+            default -> throw new IllegalArgumentException("Tipo de IA não reconhecido: " + aiType);
+        };
     }
 
     @Override

@@ -2,7 +2,6 @@ package gui;
 
 import io.github.amithkoujalgi.ollama4j.core.exceptions.OllamaBaseException;
 import ollama4j.NSQL;
-import ollama4j.SQLCoder;
 
 import javax.swing.*;
 
@@ -105,7 +104,7 @@ public class Chat extends JFrame {
                 return;
             }
     
-            String sqlQuery = "";
+            String sqlQuery;
     
             try {
                 NSQL ai = new NSQL(selectedDatabase, selectedAI);
@@ -190,21 +189,9 @@ public class Chat extends JFrame {
             }
         });
 
-        dbSelection.addActionListener(e -> {
-            if (dbSelection.getSelectedIndex() != -1 && aiComboBox.getSelectedIndex() != -1) {
-                startButton.setEnabled(true);
-            } else {
-                startButton.setEnabled(false);
-            }
-        });
+        dbSelection.addActionListener(e -> startButton.setEnabled(dbSelection.getSelectedIndex() != -1 && aiComboBox.getSelectedIndex() != -1));
 
-        aiComboBox.addActionListener(e -> {
-            if (dbSelection.getSelectedIndex() != -1 && aiComboBox.getSelectedIndex() != -1) {
-                startButton.setEnabled(true);
-            } else {
-                startButton.setEnabled(false);
-            }
-        });
+        aiComboBox.addActionListener(e -> startButton.setEnabled(dbSelection.getSelectedIndex() != -1 && aiComboBox.getSelectedIndex() != -1));
 
         dbPanel.add(startButton);
 
