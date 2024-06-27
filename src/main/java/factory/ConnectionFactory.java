@@ -20,7 +20,7 @@ public class ConnectionFactory {
     public Connection getConnection() {
         String url;
         String user = "root";
-        String password = "Mysql2002@";
+        String password = "fatec";
 
         url = switch (databaseType) {
             case "Livros" -> "jdbc:mysql://localhost:3306/livros";

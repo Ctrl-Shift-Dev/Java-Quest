@@ -29,24 +29,26 @@ public class Chat extends JFrame {
         setLocationRelativeTo(null);
         setIconImage(icon.getImage());
 
-        JTextArea chat = new JTextArea();
-        chat.setFont(new Font("ROBOTO", Font.PLAIN, 16));
-        chat.setBackground(Color.darkGray);
-        chat.setForeground(Color.white);
-        chat.setEditable(false);
-        chat.setLineWrap(true);
-        chat.setWrapStyleWord(true);
+        JPanel chatPanel = new JPanel();
+        chatPanel.setBackground(Color.darkGray);
+        chatPanel.setLayout(new BoxLayout(chatPanel, BoxLayout.Y_AXIS));
+
+        JScrollPane scrollPane = new JScrollPane(chatPanel);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         JTextField input = new JTextField(30);
 
-        JButton enviarButton = getEnviarButton(input, chat);
+        JButton enviarButton = getEnviarButton(input, chatPanel);
 
         JButton limparButton = new JButton("Limpar");
         limparButton.setBackground(Color.darkGray);
         limparButton.setForeground(Color.white);
         limparButton.addActionListener(e -> {
             input.setText("");
-            chat.setText("");
+            chatPanel.removeAll();
+            chatPanel.revalidate();
+            chatPanel.repaint();
         });
 
         JButton voltarButton = new JButton("Voltar");
@@ -77,7 +79,7 @@ public class Chat extends JFrame {
 
         inputPanel.add(buttonPanel, BorderLayout.SOUTH);
 
-        panel.add(new JScrollPane(chat), BorderLayout.CENTER);
+        panel.add(scrollPane, BorderLayout.CENTER);
         panel.add(inputPanel, BorderLayout.SOUTH);
 
         add(panel);
@@ -85,64 +87,79 @@ public class Chat extends JFrame {
         setVisible(true);
     }
 
-    private JButton getEnviarButton(JTextField input, JTextArea chat) {
+    private JButton getEnviarButton(JTextField input, JPanel chatPanel) {
         JButton enviarButton = new JButton("Enviar");
         enviarButton.setBackground(Color.darkGray);
         enviarButton.setForeground(Color.white);
         enviarButton.addActionListener(e -> {
             String query = input.getText();
-            chat.append("Você: " + query + "\n");
-            useSelectedAI(query, chat);
+            input.setText("");
+            addMessage(chatPanel, "Você: " + query, true);
+            useSelectedAI(query, chatPanel);
         });
         return enviarButton;
     }
 
-    private void useSelectedAI(String query, JTextArea chat) {
+    private void addMessage(JPanel chatPanel, String message, boolean isUser) {
+        JPanel messagePanel = new JPanel();
+        messagePanel.setBackground(Color.darkGray);
+        messagePanel.setLayout(new FlowLayout(isUser ? FlowLayout.RIGHT : FlowLayout.LEFT));
+
+        JTextPane messageText = new JTextPane();
+        messageText.setText(message);
+        messageText.setEditable(false);
+        messageText.setFont(new Font("ROBOTO", Font.PLAIN, 16));
+        messageText.setBackground(Color.darkGray);
+        messageText.setForeground(Color.white);
+        messageText.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+
+        messagePanel.add(messageText);
+        chatPanel.add(messagePanel);
+        chatPanel.revalidate();
+        chatPanel.repaint();
+    }
+
+    private void useSelectedAI(String query, JPanel chatPanel) {
         try {
             if (selectedAI == null || selectedDatabase == null) {
-                chat.append("Erro: IA ou banco de dados não selecionados.\n");
+                addMessage(chatPanel, "Erro: IA ou banco de dados não selecionados.", false);
                 return;
             }
-    
+
             String sqlQuery;
-    
+
             try {
                 NSQL ai = new NSQL(selectedDatabase, selectedAI);
                 ai.setRequest(query);
                 sqlQuery = ai.aiAnswer();
             } catch (OllamaBaseException | IOException | InterruptedException | SQLException e) {
-                chat.append("Erro ao usar IA: " + e.getMessage() + "\n");
+                addMessage(chatPanel, "Erro ao usar IA: " + e.getMessage(), false);
                 return;
             }
-    
-            // chat.append("Consulta SQL gerada: " + sqlQuery + "\n");
-    
+
             try (Connection conn = new ConnectionFactory(selectedDatabase).getConnection()) {
                 if (conn != null) {
                     try (java.sql.Statement stmt = conn.createStatement();
                          ResultSet rs = stmt.executeQuery(sqlQuery)) {
-    
-                        chat.append("Java Quest:\n");
-    
+
+                        addMessage(chatPanel, "Java Quest:", false);
+
                         while (rs.next()) {
-                            chat.append(rs.getString(1));
-                            chat.append("\n");
+                            addMessage(chatPanel, rs.getString(1), false);
                         }
                     } catch (SQLException ex) {
-                        chat.append("Erro de SQL: " + ex.getMessage() + "\n");
+                        addMessage(chatPanel, "Erro de SQL: " + ex.getMessage(), false);
                     }
                 } else {
-                    chat.append("Erro: Conexão com o banco de dados não estabelecida.\n");
+                    addMessage(chatPanel, "Erro: Conexão com o banco de dados não estabelecida.", false);
                 }
             } catch (SQLException ex) {
-                chat.append("Erro de SQL ao estabelecer conexão: " + ex.getMessage() + "\n");
+                addMessage(chatPanel, "Erro de SQL ao estabelecer conexão: " + ex.getMessage(), false);
             }
         } catch (Exception e) {
-            chat.append("Erro geral: " + e.getMessage() + "\n");
+            addMessage(chatPanel, "Erro geral: " + e.getMessage(), false);
         }
     }
-  
-    
 
     private static void showSplashScreen() {
         JFrame splashScreen = new JFrame(APP_TITLE);
@@ -164,7 +181,7 @@ public class Chat extends JFrame {
         dbPanel.setBackground(Color.darkGray);
         dbPanel.setForeground(Color.white);
 
-        JComboBox<String> dbSelection = new JComboBox<>(new String[]{"Livros", "Esportes", "Viagens"});
+        JComboBox<String> dbSelection = new JComboBox<>(new String[]{"Livros", "Esportes"});
         dbSelection.setSelectedIndex(-1);
         JLabel dbLabel = new JLabel("Selecione um Banco de Dados:");
         dbLabel.setForeground(Color.white);
